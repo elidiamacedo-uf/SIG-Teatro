@@ -9,5 +9,5 @@ Exemplo de uso
 O que elas podem e o que elas não podem fazer com o seu código, como alterar, usar e distribuir.
 
 ## Créditos
-Emilly Elídia;
+Emilly Elídia Andrade Macedo dos Santos;
 Marcos Vinícius Dantas da Silva;
