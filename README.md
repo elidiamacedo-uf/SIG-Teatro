@@ -10,4 +10,4 @@ O que elas podem e o que elas não podem fazer com o seu código, como alterar, 
 
 ## Créditos
 Emilly Elídia;
-Marcos Vinícius;
+Marcos Vinícius Dantas da Silva;
