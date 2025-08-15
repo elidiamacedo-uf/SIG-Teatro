@@ -1,30 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
-int tempo = 150000;
+#include <windows.h>
+int tempo = 100;
+
 int main(){
     int executar;
     printf("#####################################################################################\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("   +++                                INGRESSO                                 +++\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("#####################################################################################\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                             1 - VENDER INGRESSO                               ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                                                                               ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                             2 - EXCLUIR INGRESSO                              ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                                                                               ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                             3 - ALTERAR INGRESSO                              ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                                                                               ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                             4 - PESUISAR SHOW                                 ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("###                                                                               ###\n");
-    usleep(tempo);
+    Sleep(tempo);
     printf("##                              0 - SAIR : ");
     scanf("%d",&executar);
     return 0;
