@@ -49,10 +49,50 @@ int main(){
 
 void vender_Ingresso(){
     system("cls");
-    printf("#####################################################################################\n");
-    Sleep(tempo);
-    printf("   +++                          VENDER INGRESSO                                +++\n");
-    Sleep(tempo);
-    printf("#####################################################################################\n");
-    Sleep(tempo);
+    int i;
+     //Primeira Linha
+    for(i = 0; i<70; i++){  
+        printf("#");
+        Sleep(1);
+    }
+    printf("\n");
+
+
+
+
+    //Segunda Linha
+    for(i = 0;i<27; i++){
+        if (i > 3 && i < 7){ 
+            printf("+");
+            Sleep(25);
+        } 
+        else{
+            printf(" ");
+            Sleep(1);
+        }
+    }
+    printf("VENDER INGRESSO");
+    
+    for(i = 0;i<31;i++){
+        if (i > 19 && i < 24){
+            printf("+");
+            Sleep(25);
+        }
+        else{
+            printf(" ");
+            Sleep(1);
+        }
+    }
+    printf("\n");
+
+
+
+    // Terceira Linha
+    for(i = 0; i<70; i++){  
+        printf("#");
+        Sleep(1);
+    }
+    printf("\n");
+
+
 }
