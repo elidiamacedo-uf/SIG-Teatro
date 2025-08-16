@@ -3,8 +3,11 @@
 #include <windows.h>
 int tempo = 100;
 
+
+void vender_Ingresso();
+
 int main(){
-    int executar;
+    char executar;
     printf("#####################################################################################\n");
     Sleep(tempo);
     printf("   +++                                INGRESSO                                 +++\n");
@@ -23,11 +26,33 @@ int main(){
     Sleep(tempo);
     printf("###                                                                               ###\n");
     Sleep(tempo);
-    printf("###                             4 - PESUISAR SHOW                                 ###\n");
+    printf("###                             4 - PESQUISAR SHOW                                ###\n");
     Sleep(tempo);
     printf("###                                                                               ###\n");
     Sleep(tempo);
     printf("##                              0 - SAIR : ");
-    scanf("%d",&executar);
+    scanf("%c",&executar);
+
+    switch (executar)
+    {
+        case '1':
+            vender_Ingresso();
+            break;
+    
+        default:
+            break;
+    
+    }
     return 0;
+}
+
+
+void vender_Ingresso(){
+    system("cls");
+    printf("#####################################################################################\n");
+    Sleep(tempo);
+    printf("   +++                          VENDER INGRESSO                                +++\n");
+    Sleep(tempo);
+    printf("#####################################################################################\n");
+    Sleep(tempo);
 }
