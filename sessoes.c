@@ -8,7 +8,7 @@ void sessoes(){
         printf("###                             2 - PROCURAR SESSÃO                              ###\n");
         printf("###                             3 - ATUALIZAR SESSÃO                              ###\n");
         printf("###                             4 - DELETAR SESSÃO                              ###\n");
-        printf("###                             0 - SAIR                              ###\n");
+        printf("###                             0 - VOLTAR AO MENU ANTERIOR...                      ###\n");
         scanf("%d", &escolha);
 
         switch (escolha)
@@ -26,7 +26,7 @@ void sessoes(){
             printf("4 - Deletar sessão\n");
             break;
         case 0:
-            printf("0 - Saindo...\n");
+            printf("0 - Voltar ao anterior...\n");
             break;
         default:
             printf("Opção inválida ");
