@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <windows.h>
 
 
@@ -9,7 +10,6 @@ void ani_Encerrar();
 void ingresso();
 void vender_Ingresso();
 void excluir_Ingresso();
-
 
 
 int tempo = 100;
@@ -54,6 +54,8 @@ int main() {
                 break;
             case '2':
                 break;
+            case '3':
+                break
                 
             case '0':
                 parada = FALSE;
@@ -61,7 +63,7 @@ int main() {
                 break;
             default:
                 printf("\n \n");
-                printf("!VALOR INVALIDO, POR FAVOR INSIRIR APENAS UM DOS VALORES ACIMA!\n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
                 system("pause");
                 break;
         }
@@ -69,9 +71,6 @@ int main() {
   } 
 return 0; 
 }
-
-
-
 
 
 void ingresso(){  
@@ -249,8 +248,8 @@ void ani_Encerrar(){
         for (j = 0; j < 5; j++){
             printf(". ");
             Sleep(300);
-        }
+        }w
     }
     system("clear||cls");
-    printf("PRORGRAMA ENCERRADO");
+    printf("PROGRAMA ENCERRADO");
 }
