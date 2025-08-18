@@ -356,9 +356,8 @@ void ani_Encerrar(){
 
 void func_Ani(int tempo){  //Função Tirada do ChatGPT
     #ifdef _WIN64
-        Sleep(tempo);
-       
+        Sleep(tempo);  
     #else
-        //usleep(tempo * 1000);
+        usleep(tempo * 1000);
     #endif
 }
