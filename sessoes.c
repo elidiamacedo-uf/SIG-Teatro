@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void sessoes(){
     int escolha;
 
