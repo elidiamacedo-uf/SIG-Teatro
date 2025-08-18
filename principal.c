@@ -359,6 +359,6 @@ void func_Ani(int tempo){  //Função Tirada do ChatGPT
         Sleep(tempo);
        
     #else
-        usleep(tempo * 1000);
+        //usleep(tempo * 1000);
     #endif
 }
