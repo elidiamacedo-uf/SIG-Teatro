@@ -14,19 +14,19 @@ void sessoes(){
         switch (escolha)
         {
         case 1:
-            printf("1 - Criar sessão");
+            printf("1 - Criar sessão\n");
             break;
         case 2:
-            printf("2 - Procurarr sessão");
+            printf("2 - Procurar sessão\n");
             break;
         case 3:
-            printf("3 - Atualizar sessão");
+            printf("3 - Atualizar sessão\n");
             break;
         case 4:
-            printf("4 - Deletar sessão");
+            printf("4 - Deletar sessão\n");
             break;
         case 0:
-            printf("0 - Saindo...");
+            printf("0 - Saindo...\n");
             break;
         default:
             printf("Opção inválida ");
