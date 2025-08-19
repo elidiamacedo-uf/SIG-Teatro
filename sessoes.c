@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void sessoes(){
     int escolha;
 
@@ -9,21 +7,21 @@ void sessoes(){
         printf("###                             4 - DELETAR SESSÃO                              ###\n");
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                      ###\n");
         scanf("%d", &escolha);
-
+//repetição e afins
         switch (escolha)
         {
         case 1:
             printf("1 - Criar sessão\n");
-            break;
+            criar_sessao();
         case 2:
             printf("2 - Procurar sessão\n");
-            break;
+            procurar_sessao();
         case 3:
             printf("3 - Atualizar sessão\n");
-            break;
+            atualizar_sessao();
         case 4:
             printf("4 - Deletar sessão\n");
-            break;
+            deletar_sessao();
         case 0:
             printf("0 - Voltar ao anterior...\n");
             break;
@@ -33,7 +31,22 @@ void sessoes(){
         }
     }
 
-int main(){
-    sessoes();
-    return 0;
+void criar_sessao(){
+    system("clear" || "cls");
+    printf("ID SESSÃO: ");
+}
+
+void procurar_sessao(){
+    system("clear" || "cls");
+    printf("ID SESSÃO: ");
+}
+
+void atualizar_sessao(){
+    system("clear" || "cls");
+    printf("ID SESSÃO: ");
+}
+
+void deletar_sessao(){
+    system("clear" || "cls");
+    printf("ID SESSÃO: ");
 }
