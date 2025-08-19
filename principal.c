@@ -43,7 +43,76 @@ void atualizar_Tecnico();
 void pesquisar_Tecnico();
 void excluir_Tecnico();
 
+void equipe(){
+     printf(" _    _ \n");
+    printf("| |  | |\n");
+    printf("| |  | |\n");
+    printf("| |  | |\n");
+    printf("| |  | |\n");
+    printf("| |__| |\n");
+    printf(" \\____/ \n\n");
 
+    // Desenha a letra F
+    printf(" ______ \n");
+    printf("|  ____|\n");
+    printf("| |__   \n");
+    printf("|  __|  \n");
+    printf("| |     \n");
+    printf("|_|     \n\n");
+                                         // A palavra UFRN foi feita pelo GEMINI
+    // Desenha a letra R
+    printf(" ______ \n");
+    printf("|  _  \\\n");
+    printf("| | | |\n");
+    printf("| | | |\n");
+    printf("| |_| |\n");
+    printf("|  _  /\n");
+    printf("|_| \\_\\\n\n");
+
+    // Desenha a letra N
+    printf(" _    _ \n");
+    printf("| \\  / |\n");
+    printf("|  \\/  |\n");
+    printf("| |\\/| |\n");
+    printf("| |  | |\n");
+    printf("|_|  |_|\n");
+
+    printf("\n \n");
+    
+    printf("             Universidade Federal do Rio Grande do Norte                 \n");
+    printf("                 Disciplina DCT1106 -- Programacao                       \n");
+    printf("                   Professor: Flavius Gorgonio                           \n");
+    printf("#########################################################################\n");
+    printf("-+-+-+-+-+-+-+-+-+- Sistema de Gestao de Teatro +-+-+-+-+-+-+-+-+-+-+-+-+\n");
+    printf("#########################################################################\n");
+    printf("\n");
+    printf("             Projeto desenvolvido por:                                   \n");
+    printf("             Aluno 1: Emilly Elidia Andrade Macedo dos Santos            \n");
+    printf("             Aluno 2: Marcos Vinícius Dantas da Silva                    \n");
+    printf("\n");
+    printf("#########################################################################\n");
+    printf("\n \n \n");
+}
+
+void proj_Descrit(){
+    printf("=========================================================================================\n");
+    printf("|                   Universidade Federal do Rio Grande do Norte                          |\n");
+    printf("|                        Disciplina DCT1106 -- Programação                               |\n");
+    printf("|                           Professor: Flavius Gorgonio                                  |\n");
+    printf("|                                                                                        |\n");
+    printf("|   O Sistema de Gestao Teatral ou SGT, trata-se codigo produzido para fins pontuação    |\n");
+    printf("|   na discíplina de Programação administrada pelo Professor Flávius Gorgônio.           |\n");
+    printf("|                                                                                        |\n");
+    printf("|   A linguagem de programação utilizada e o C, se restrigindo apenas as suas bibliotecas|\n");
+    printf("|   padroes.                                                                             |\n");
+    printf("|                                                                                        |\n");
+    printf("|   O sistema SGT é um software que gerencia e armazena dados referentes a uma casa de   |\n");
+    printf("|   tetro, contanto com 4 modulos: Ingresso, Shows, Sessoes, Tecnicos e Relatorios.      |\n");
+    printf("|                                                                                        |\n");
+    printf("|                                                                                        |\n");
+    printf("=========================================================================================\n");
+    printf("\n \n");
+}
 
 int main() {
     int tempo = 100;
@@ -51,6 +120,8 @@ int main() {
     while (parada){ 
         system("clear||cls");
         char executar;
+        proj_Descrit();
+        equipe();
         printf("#####################################################################################\n");
         func_Ani(tempo);
         printf("   +++                           SISTEMA DE TEATRO                             +++\n");
