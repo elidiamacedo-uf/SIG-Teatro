@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void tecnicos(){
     int escolha;
 
@@ -33,7 +31,19 @@ void tecnicos(){
         }
     }
 
-int main(){
-    tecnicos();
-    return 0;
+void cadastro_tecnico(){
+    system("clear" || "cls");
+    printf("CPF: ");
+    printf("Nome completo: ");
+    printf("Email:");
+    printf("Telefone");
+}
+
+
+void atualizar_tecnico(){
+    system("clear" || "cls");
+    printf("CPF: ");
+    printf("Nome completo: ");
+    printf("Email:");
+    printf("Telefone");
 }
