@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+#include <time.h>
 
 #ifdef _WIN64
     #include <windows.h> //Trecho de código tirado do ChatGPT
@@ -19,7 +19,6 @@ void vender_Ingresso();
 void excluir_Ingresso();
 void alterar_Ingresso();
 void pesquisar_Ingresso();
-
 
 
 
@@ -65,23 +64,21 @@ int main() {
                 break;
             case '2':
                 break;
-                
+            case '3':
+                break;   
             case '0':
                 parada = false;
                 ani_Encerrar();
                 break;
             default:
                 printf("\n \n");
-                printf("!VALOR INVALIDO, POR FAVOR INSIRIR APENAS UM DOS VALORES ACIMA!\n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
                 system("pause");
                 break;
         }
     } 
 return 0; 
 }
-
-
-
 
 
 void ingresso(){  
@@ -354,10 +351,13 @@ void ani_Encerrar(){
     printf("PRORGRAMA ENCERRADO");
 }
 
-void func_Ani(int tempo){  //Função Tirada do ChatGPT
+void func_Ani(int tempo){  //Função retirada do ChatGPT
     #ifdef _WIN64
-        Sleep(tempo);  
+        Sleep(tempo);
     #else
-        usleep(tempo * 1000);
+        struct timespec ts;
+        ts.tv_sec = tempo / 1000;                 
+        ts.tv_nsec = (tempo % 1000) * 1000000L;   
+    nanosleep(&ts, NULL);
     #endif
 }
