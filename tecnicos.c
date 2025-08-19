@@ -39,11 +39,20 @@ void cadastro_tecnico(){
     printf("Telefone");
 }
 
-
 void atualizar_tecnico(){
     system("clear" || "cls");
     printf("CPF: ");
     printf("Nome completo: ");
     printf("Email:");
     printf("Telefone");
+}
+
+void pesquisar_tecnico(){
+    system("clear" || "cls");
+    printf("CPF: ");
+}
+
+void deletar_tecnico(){
+    system("clear" || "cls");
+    printf("CPF: ");
 }
