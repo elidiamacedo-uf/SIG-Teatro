@@ -17,9 +17,20 @@ void func_Ani(int tempo);
 void ingresso();
 void vender_Ingresso();
 void excluir_Ingresso();
-void alterar_Ingresso();
+void atualizar_Ingresso();
 void pesquisar_Ingresso();
 
+void sessoes();
+void criar_Sessao();
+void procurar_Sessao();
+void atualizar_Sessao();
+void excluir_Sessao();
+
+void tecnicos();
+void cadastro_Tecnico();
+void atualizar_Tecnico();
+void pesquisar_Tecnico();
+void excluir_Tecnico();
 
 
 
@@ -65,7 +76,10 @@ int main() {
             case '2':
                 break;
             case '3':
-                break;   
+                sessoes();
+                break;
+            case '4':
+                tecnicos();   
             case '0':
                 parada = false;
                 ani_Encerrar();
@@ -119,7 +133,7 @@ void ingresso(){
             case '2':
                 excluir_Ingresso();
             case '3':
-                alterar_Ingresso();
+                atualizar_Ingresso();
 
             case '4':
                 pesquisar_Ingresso();
@@ -134,8 +148,71 @@ void ingresso(){
   }
 }
 
+void tecnicos(){
+    int escolha;
+        system("clear || cls");
+        printf("###                             1 - CADASTRAR TECNICO                              ###\n");
+        printf("###                             2 - PROCURAR TÉCNICO                               ###\n");
+        printf("###                             3 - ATUALIZAR TÉCNICO                              ###\n");
+        printf("###                             4 - DELETAR TÉCNICO                                ###\n");
+        printf("###                             0 - VOLTAR AO MENU ANTERIOR...                     ###\n");
+        scanf(" %d", &escolha);
+    //repetição e afins
+        switch (escolha)
+        {
+        case 1:
+            printf("1 - Cadastrar técnico\n");
+            cadastro_Tecnico();
+        case 2:
+            printf("2 - Procurar técnico\n");
+            pesquisar_Tecnico();
+        case 3:
+            printf("3 - Atualizar técnico\n");
+            atualizar_Tecnico();
+        case 4:
+            printf("4 - Deletar técnico\n");
+            excluir_Tecnico();
+        case 0:
+            printf("0 - Voltar ao anterior...\n");
+            break;
+        default:
+            printf("Opção inválida ");
+            break;
+        }
+    }
 
+void sessoes(){
+    int escolha;
 
+        printf("###                             1 - CRIAR SESSÃO                              ###\n");
+        printf("###                             2 - PROCURAR SESSÃO                              ###\n");
+        printf("###                             3 - ATUALIZAR SESSÃO                              ###\n");
+        printf("###                             4 - DELETAR SESSÃO                              ###\n");
+        printf("###                             0 - VOLTAR AO MENU ANTERIOR...                      ###\n");
+        scanf("%d", &escolha);
+//repetição e afins
+        switch (escolha)
+        {
+        case 1:
+            printf("1 - Criar sessão\n");
+            criar_Sessao();
+        case 2:
+            printf("2 - Procurar sessão\n");
+            procurar_Sessao();
+        case 3:
+            printf("3 - Atualizar sessão\n");
+            atualizar_Sessao();
+        case 4:
+            printf("4 - Deletar sessão\n");
+            excluir_Sessao();
+        case 0:
+            printf("0 - Voltar ao anterior...\n");
+            break;
+        default:
+            printf("Opção inválida ");
+            break;
+        }
+    }
 
 
 
@@ -242,7 +319,7 @@ void excluir_Ingresso(){
 }
 
 
-void alterar_Ingresso(){
+void atualizar_Ingresso(){
     system("clear||cls");
     int i;
      //Primeira Linha
@@ -334,6 +411,36 @@ void pesquisar_Ingresso(){
 }
 
 
+
+
+
+
+void cadastro_Tecnico(){
+    system("clear || cls");
+    printf("CPF: ");
+    printf("Nome completo: ");
+    printf("Email:");
+    printf("Telefone");
+}
+
+void atualizar_Tecnico(){
+    system("clear || cls");
+    printf("CPF: ");
+    printf("Nome completo: ");
+    printf("Email:");
+    printf("Telefone");
+}
+
+void pesquisar_Tecnico(){
+    system("clear || cls");
+    printf("CPF: ");
+}
+
+void excluir_Tecnico(){
+    system("clear || cls");
+    printf("CPF: ");
+}
+
 void ani_Encerrar(){
     printf("\n \n");
     
@@ -358,6 +465,6 @@ void func_Ani(int tempo){  //Função retirada do ChatGPT
         struct timespec ts;
         ts.tv_sec = tempo / 1000;                 
         ts.tv_nsec = (tempo % 1000) * 1000000L;   
-    nanosleep(&ts, NULL);
+        nanosleep(&ts, NULL);
     #endif
 }
