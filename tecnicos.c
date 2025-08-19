@@ -7,21 +7,21 @@ void tecnicos(){
         printf("###                             4 - DELETAR TÉCNICO                           ###\n");
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                      ###\n");
         scanf("%d", &escolha);
-
+    //repetição e afins
         switch (escolha)
         {
         case 1:
             printf("1 - Cadastrar técnico\n");
-            break;
+            cadastro_tecnico();
         case 2:
             printf("2 - Procurar técnico\n");
-            break;
+            pesquisar_tecnico();
         case 3:
             printf("3 - Atualizar técnico\n");
-            break;
+            atualizar_tecnico();
         case 4:
             printf("4 - Deletar técnico\n");
-            break;
+            deletar_tecnico();
         case 0:
             printf("0 - Voltar ao anterior...\n");
             break;
