@@ -3,20 +3,25 @@
 #include <stdbool.h>
 #include <time.h>
 
-#ifdef _WIN64
-    #include <windows.h> //Trecho de código tirado do ChatGPT
-#else
+#ifdef _WIN64 // Caso windows 64, use:
+    #include <windows.h>  //Trecho de código tirado do ChatGPT
+#else // Se não, Linux,Mcos, use:
     #include <unistd.h>
 #endif
 
 
+//INFO
+void proj_Descrit();
+void equipe();
+
 //ANIMAÇÕES
 void ani_Encerrar();
 void func_Ani(int tempo);
+
 //MÓDULOS
 void ingresso();
 void vender_Ingresso();
-void excluir_Ingresso();
+void excluir_Ingresso();                
 void atualizar_Ingresso();
 void pesquisar_Ingresso();
 
@@ -183,12 +188,12 @@ void tecnicos(){
 
 void sessoes(){
     int escolha;
-
-        printf("###                             1 - CRIAR SESSÃO                              ###\n");
+        system("clear || cls");
+        printf("###                             1 - CRIAR SESSÃO                                 ###\n");
         printf("###                             2 - PROCURAR SESSÃO                              ###\n");
-        printf("###                             3 - ATUALIZAR SESSÃO                              ###\n");
-        printf("###                             4 - DELETAR SESSÃO                              ###\n");
-        printf("###                             0 - VOLTAR AO MENU ANTERIOR...                      ###\n");
+        printf("###                             3 - ATUALIZAR SESSÃO                             ###\n");
+        printf("###                             4 - DELETAR SESSÃO                               ###\n");
+        printf("###                             0 - VOLTAR AO MENU ANTERIOR...                   ###\n");
         scanf("%d", &escolha);
 //repetição e afins
         switch (escolha)
@@ -213,14 +218,6 @@ void sessoes(){
             break;
         }
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -440,6 +437,29 @@ void excluir_Tecnico(){
     system("clear || cls");
     printf("CPF: ");
 }
+
+
+
+void criar_Sessao(){
+    system("clear || cls");
+    printf("ID SESSÃO: ");
+}
+
+void procurar_Sessao(){
+    system("clear || cls");
+    printf("ID SESSÃO: ");
+}
+
+void atualizar_Sessao(){
+    system("clear || cls");
+    printf("ID SESSÃO: ");
+}
+
+void excluir_Sessao(){
+    system("clear || cls");
+    printf("ID SESSÃO: ");
+}
+
 
 void ani_Encerrar(){
     printf("\n \n");
