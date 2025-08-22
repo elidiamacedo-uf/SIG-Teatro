@@ -16,7 +16,7 @@ void equipe();
 
 //ANIMAÇÕES
 void ani_Encerrar();
-void func_Ani(int tempo);
+void func_Ani(int);
 
 //MÓDULOS
 void ingresso();
@@ -97,17 +97,17 @@ void equipe(){
 void proj_Descrit(){
     printf("=========================================================================================\n");
     printf("|                   Universidade Federal do Rio Grande do Norte                          |\n");
-    printf("|                        Disciplina DCT1106 -- Programação                               |\n");
+    printf("|                        Disciplina DCT1106 -- Programacao                               |\n");
     printf("|                           Professor: Flavius Gorgonio                                  |\n");
     printf("|                                                                                        |\n");
-    printf("|   O Sistema de Gestao Teatral ou SGT, trata-se codigo produzido para fins pontuação    |\n");
-    printf("|   na discíplina de Programação administrada pelo Professor Flávius Gorgônio.           |\n");
+    printf("|   O Sistema de Gestao Teatral ou SGT, trata-se codigo produzido para fins pontuacao    |\n");
+    printf("|   na disciplina de Programacao administrada pelo Professor Flavius Gorgonio.           |\n");
     printf("|                                                                                        |\n");
-    printf("|   A linguagem de programação utilizada e o C, se restrigindo apenas as suas bibliotecas|\n");
+    printf("|   A linguagem de programacao utilizada e o C, se restrigindo apenas as suas bibliotecas|\n");
     printf("|   padroes.                                                                             |\n");
     printf("|                                                                                        |\n");
-    printf("|   O sistema SGT é um software que gerencia e armazena dados referentes a uma casa de   |\n");
-    printf("|   tetro, contanto com 4 modulos: Ingresso, Shows, Sessoes, Tecnicos e Relatorios.      |\n");
+    printf("|   O sistema SGT e um software que gerencia e armazena dados referentes a uma casa de   |\n");
+    printf("|   tetro, contanto com 4 modulos: Ingresso, Shows, Sessoes, Tecnicos e Relatorios.      |\n");               
     printf("|                                                                                        |\n");
     printf("|                                                                                        |\n");
     printf("=========================================================================================\n");
@@ -151,31 +151,44 @@ int main() {
         printf("##                              0 - SAIR : ");
         scanf(" %c",&executar);
 
-        switch (executar){
-            case '1':
-                ingresso();
-                break;
-            case '2':
+        if (executar == '1'){
+            ingresso();
+            }
+        else{
+            if (executar == '2'){      //Sistema IF-ELESE-IF Tirado do Livro Linguagem C Completa e Descomplicada de André Backes  página 84
                 shows();
-                break;
-            case '3':
-                sessoes();
-                break;
-            case '4':
-                tecnicos();   
-            case '0':
-                parada = false;
-                ani_Encerrar();
-                break;
-            default:
-                printf("\n \n");
-                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-                system("pause");
-                break;
+            }
+            else{
+                if (executar == '3'){
+                    sessoes();
+                }
+                else{
+                    if (executar == '4'){
+                        tecnicos(); 
+                    }
+                    else{
+                        if (executar == '5'){
+                            printf("MÓDULO EM REFORMA");
+                        }
+                        else{
+                            if (executar == '0'){
+                                ani_Encerrar();
+                                parada = false;
+                            }
+                            else{
+                                printf("\n \n");
+                                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                                system("pause");
+                            }
+                        }
+                    }
+                }
+            }
         }
-    } 
-return 0; 
-}
+    }
+return 0;            
+} 
+
 
 
 
@@ -199,7 +212,7 @@ void ingresso(){
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("###                             3 - ALTERAR INGRESSO                              ###\n");
+        printf("###                             3 - ATUALIZAR INGRESSO                            ###\n");
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
@@ -209,28 +222,38 @@ void ingresso(){
         func_Ani(tempo);
         printf("##                              0 - SAIR : ");
         scanf(" %c",&executar_I);
-
-        switch (executar_I)
-        {
-            case '1':
-                vender_Ingresso();
-            case '2':
+        
+        if (executar_I == '1'){
+            vender_Ingresso();
+        }
+        else{
+            if (executar_I == '2'){
                 excluir_Ingresso();
-            case '3':
-                atualizar_Ingresso();
-
-            case '4':
-                pesquisar_Ingresso();
-            case '0':
-                main();
-                break;
-            default:
-                printf("\n \n");
-                printf("!VALOR INVÁLIDO, POR FAVOR INSERIR OS UM DOS VALORES ACIMA!\n");
-                system("pause");
+            }
+            else{
+                if (executar_I == '3'){
+                    atualizar_Ingresso();
+                }
+                else{
+                    if (executar_I == '4'){
+                        pesquisar_Ingresso();
+                    }
+                    else{
+                        if (executar_I == '0'){
+                            parada_I = false;
+                        }
+                        else{
+                            printf("\n \n");
+                            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                            system("pause");
+                        }
+                    }
+                }
+            }   
+        }
     }
-  }
 }
+
 
 void shows(){  
     int tempo = 100;
@@ -398,10 +421,7 @@ void vender_Ingresso(){
         printf("#");
         func_Ani(1);
     }
-    printf("\n");
-
     ingresso();
-
 }
 
 void excluir_Ingresso(){
