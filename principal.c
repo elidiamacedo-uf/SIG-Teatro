@@ -254,7 +254,6 @@ void ingresso(){
     }
 }
 
-
 void shows(){  
     int tempo = 100;
     bool parada_S = true;
@@ -286,28 +285,34 @@ void shows(){
         printf("##                              0 - SAIR : ");
         scanf(" %c",&executar_S);
 
-        switch (executar_S)
-        {
-            case '1':
-                cadastrar_Show();
-                break;
-            case '2':
+        if (executar_S == '1'){
+            cadastrar_Show();
+        }
+        else{
+            if (executar_S == '2'){
                 excluir_Show();
-                break;
-            case '3':
-                atualizar_Show();
-                break;
-            case '4':
-                pesquisar_Show();
-                break;
-            case '0':
-                main();
-                break;
-            default:
-                printf("\n \n");
-                printf("!VALOR INVÁLIDO, POR FAVOR INSERIR OS UM DOS VALORES ACIMA!\n");
-                system("pause");
-    }
+            }
+            else{
+                if (executar_S == '3'){
+                    atualizar_Show();
+                }
+                else{
+                    if (executar_S == '4'){
+                        pesquisar_Show();
+                    }
+                    else{
+                        if (executar_S == '0'){
+                            parada_S = false;
+                        }
+                        else{
+                            printf("\n \n");
+                            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                            system("pause");
+                        }
+                    }
+                }
+            }
+        }
   }
 }
 
@@ -321,28 +326,26 @@ void tecnicos(){
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                     ###\n");
         scanf(" %d", &escolha);
     //repetição e afins
-        switch (escolha)
-        {
-        case 1:
-            printf("1 - Cadastrar técnico\n");
-            cadastro_Tecnico();
-        case 2:
-            printf("2 - Procurar técnico\n");
+       if (escolha == '1'){
+        cadastro_Tecnico();
+       }
+       else{
+        if (escolha == '2'){
             pesquisar_Tecnico();
-        case 3:
-            printf("3 - Atualizar técnico\n");
-            atualizar_Tecnico();
-        case 4:
-            printf("4 - Deletar técnico\n");
-            excluir_Tecnico();
-        case 0:
-            printf("0 - Voltar ao anterior...\n");
-            break;
-        default:
-            printf("Opção inválida ");
-            break;
         }
-    }
+        else{
+            if (escolha == '3'){
+                atualizar_Tecnico();
+            }
+            else{
+                if (escolha == '4'){
+                    excluir_Tecnico();
+                }
+            }
+        }
+        
+       }
+}
 
 void sessoes(){
     int escolha;
@@ -354,29 +357,26 @@ void sessoes(){
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                   ###\n");
         scanf("%d", &escolha);
 //repetição e afins
-        switch (escolha)
-        {
-        case 1:
-            printf("1 - Criar sessão\n");
-            criar_Sessao();
-        case 2:
-            printf("2 - Procurar sessão\n");
+        if (escolha == '1'){
+        criar_Sessao();
+       }
+       else{
+        if (escolha == '2'){
             procurar_Sessao();
-        case 3:
-            printf("3 - Atualizar sessão\n");
-            atualizar_Sessao();
-        case 4:
-            printf("4 - Deletar sessão\n");
-            excluir_Sessao();
-        case 0:
-            printf("0 - Voltar ao anterior...\n");
-            break;
-        default:
-            printf("Opção inválida ");
-            break;
         }
-    }
-
+        else{
+            if (escolha == '3'){
+                atualizar_Sessao();
+            }
+            else{
+                if (escolha == '4'){
+                    excluir_Sessao();
+                }
+            }
+        }
+        
+       }
+}
 
 
 
