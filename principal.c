@@ -7,6 +7,7 @@
     #include <windows.h>  //Trecho de código tirado do ChatGPT
 #else // Se não, Linux,Mcos, use:
     #include <unistd.h>
+    #include <pthread.h>
 #endif
 
 
@@ -17,6 +18,7 @@ void equipe();
 //ANIMAÇÕES
 void ani_Encerrar();
 void func_Ani(int);
+void func_Ani_Left();
 
 //MÓDULOS
 void ingresso();
@@ -93,7 +95,6 @@ void equipe(){
     printf("#########################################################################\n");
     printf("\n \n \n");
 }
-
 void proj_Descrit(){
     printf("=========================================================================================\n");
     printf("|                   Universidade Federal do Rio Grande do Norte                          |\n");
@@ -114,14 +115,16 @@ void proj_Descrit(){
     printf("\n \n");
 }
 
+int tempo = 100;
 int main() {
-    int tempo = 100;
     bool parada = true;
     while (parada){ 
         system("clear||cls");
         char executar;
-        proj_Descrit();
-        equipe();
+        
+        //proj_Descrit();
+        //equipe();
+
         printf("#####################################################################################\n");
         func_Ani(tempo);
         printf("   +++                           SISTEMA DE TEATRO                             +++\n");
@@ -193,7 +196,6 @@ return 0;
 
 
 void ingresso(){  
-    int tempo = 100;
     bool parada_I = true;
     while (parada_I){  
         char executar_I;
@@ -255,7 +257,6 @@ void ingresso(){
 }
 
 void shows(){  
-    int tempo = 100;
     bool parada_S = true;
     while (parada_S){  
         char executar_S;
@@ -313,16 +314,20 @@ void shows(){
                 }
             }
         }
-  }
+    }
 }
 
 void tecnicos(){
     int escolha;
         system("clear || cls");
         printf("###                             1 - CADASTRAR TECNICO                              ###\n");
+        func_Ani(tempo);
         printf("###                             2 - PROCURAR TÉCNICO                               ###\n");
+        func_Ani(tempo);
         printf("###                             3 - ATUALIZAR TÉCNICO                              ###\n");
+        func_Ani(tempo);
         printf("###                             4 - DELETAR TÉCNICO                                ###\n");
+        func_Ani(tempo);
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                     ###\n");
         scanf(" %d", &escolha);
     //repetição e afins
@@ -351,9 +356,13 @@ void sessoes(){
     int escolha;
         system("clear || cls");
         printf("###                             1 - CRIAR SESSÃO                                 ###\n");
+        func_Ani(tempo);
         printf("###                             2 - PROCURAR SESSÃO                              ###\n");
+        func_Ani(tempo);
         printf("###                             3 - ATUALIZAR SESSÃO                             ###\n");
+        func_Ani(tempo);
         printf("###                             4 - DELETAR SESSÃO                               ###\n");
+        func_Ani(tempo);
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                   ###\n");
         scanf("%d", &escolha);
 //repetição e afins
@@ -382,364 +391,46 @@ void sessoes(){
 
 //############### FUNÇÕES MÓDULO INGRESSO ##################################################
 void vender_Ingresso(){
-    system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("VENDER INGRESSO");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    ingresso();
+    char titulo[16] = "VENDER INGRESSO";
+    func_Ani_Left(titulo);
 }
 
 void excluir_Ingresso(){
-    system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("EXCLUIR INGRESSO");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    ingresso();
+    char titulo[16] = "EXCLUIR INGRESSO";
+    func_Ani_Left(titulo);
 }
 
 void atualizar_Ingresso(){
-    system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-             func_Ani(15);
-        }
-    }
-    printf("ALTERAR INGRESSO");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-             func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    ingresso();
+    char titulo[19] = "ATUALIZAR INGRESSO";
+    func_Ani_Left(titulo);
 }
 
 void pesquisar_Ingresso(){
-    system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("PESQUISAR INGRESSO");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    ingresso();
+    char titulo[19] = "PESQUISAR INGRESSO";
+    func_Ani_Left(titulo);
 }
 
 
 //############### FUNÇÕES MÓDULO SHOWS #####################################################
 void cadastrar_Show(){
-    system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("CADASTRAR SHOW");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    shows();
+    char titulo[16] = "CADASTRAR SHOW";
+    func_Ani_Left(titulo);
 
 }
 
 void excluir_Show(){
-     system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("EXCLUIR SHOW");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    shows();
+    char titulo[16] = "EXCLUIR SHOW";
+    func_Ani_Left(titulo);
 }
 
 void atualizar_Show(){
-     system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("ATUALIZAR SHOW");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    shows();
+    char titulo[16] = "ATUALIZAR SHOW";
+    func_Ani_Left(titulo);
 }
 
 void pesquisar_Show(){
-     system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("PESQUISAR SHOW");
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    shows();
+    char titulo[16] = "PESQUISAR SHOW";
+    func_Ani_Left(titulo);
 }
 
 
@@ -820,4 +511,47 @@ void func_Ani(int tempo){  //Função retirada do ChatGPT
         ts.tv_nsec = (tempo % 1000) * 1000000L;   
         nanosleep(&ts, NULL);
     #endif
+}
+
+void func_Ani_Left(char titulo[30]){
+    system("clear||cls");
+    int i;
+     //Primeira Linha
+    for(i = 0; i<70; i++){  
+        printf("#");
+        func_Ani(1);
+    }
+    printf("\n");
+
+    //Segunda Linha
+    for(i = 0;i<27; i++){
+        if (i > 3 && i < 7){ 
+            printf("+");
+            func_Ani(15);
+        } 
+        else{
+            printf(" ");
+            func_Ani(15);
+        }
+    }
+    printf("%s",titulo);
+    
+    for(i = 0;i<31;i++){
+        if (i > 19 && i < 24){
+            printf("+");
+            func_Ani(15);
+        }
+        else{
+            printf(" ");
+            func_Ani(1);
+        }
+    }
+    printf("\n");
+
+    // Terceira Linha
+    for(i = 0; i<70; i++){  
+        printf("#");
+        func_Ani(1);
+    }
+ 
 }
