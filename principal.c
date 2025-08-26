@@ -412,7 +412,7 @@ void vender_Ingresso(){
     getchar();
     printf("V----------------------------------\n");
     printf("|  ESCOLHA SUA CADEIRA: ");
-    fgets(cadeira,30,stdin);
+    fgets(cadeira,2,stdin);
     printf("V----------------------------------\n");
     system("pause");
 }
@@ -472,13 +472,13 @@ void cadastrar_Show(){
     fgets(nome,30,stdin);
     printf("V----------------------------------\n");
     printf("|  INSIRA A/AS DATAS DO SHOW: ");
-    fgets(data,30,stdin);
+    fgets(data,10,stdin);
     printf("V----------------------------------\n");
     printf("|  INSIRA A/AS DURACAOS DO SHOW: ");
-    fgets(duracao,30,stdin);;
+    fgets(duracao,4,stdin);;
     printf("V----------------------------------\n");
     printf("|  INSIRA O/OS PERSONAGENS DO SHOW: ");
-    fgets(personagens,30,stdin);
+    fgets(personagens,100,stdin);
     printf("V----------------------------------\n");
     system("pause");
 
