@@ -224,7 +224,7 @@ void ingresso(){
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("##                              0 - SAIR : ");
+        printf("##                              0 - VOLTAR AO MENU ANTERIOR...  ");
         scanf(" %c",&executar_I);
         getchar();
 
@@ -405,14 +405,14 @@ void vender_Ingresso(){
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O NOME: ");
-    gets(nome);
+    fgets(nome,30,stdin);
     printf("V----------------------------------\n");
     printf("|  INSIRA O CÓDIGO DO SHOW: ");
     scanf("%d",&codigo_Show);
     getchar();
     printf("V----------------------------------\n");
     printf("|  ESCOLHA SUA CADEIRA: ");
-    gets(cadeira);
+    fgets(cadeira,30,stdin);
     printf("V----------------------------------\n");
     system("pause");
 }
@@ -469,34 +469,55 @@ void cadastrar_Show(){
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O NOME DO SHOW: ");
-    gets(nome);
+    fgets(nome,30,stdin);
     printf("V----------------------------------\n");
     printf("|  INSIRA A/AS DATAS DO SHOW: ");
-    gets(data);
+    fgets(data,30,stdin);
     printf("V----------------------------------\n");
     printf("|  INSIRA A/AS DURACAOS DO SHOW: ");
-    gets(duracao);
+    fgets(duracao,30,stdin);;
     printf("V----------------------------------\n");
     printf("|  INSIRA O/OS PERSONAGENS DO SHOW: ");
-    gets(personagens);
+    fgets(personagens,30,stdin);
     printf("V----------------------------------\n");
     system("pause");
 
 }
 
 void excluir_Show(){
+    int codigo;
     char titulo[16] = "EXCLUIR SHOW";
     func_Ani_Left(titulo);
+
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CODIGO DO SHOW: ");
+    scanf("%d",&codigo);
+    printf("V----------------------------------\n");
 }
 
 void atualizar_Show(){
+    int codigo;
     char titulo[16] = "ATUALIZAR SHOW";
     func_Ani_Left(titulo);
+
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CODIGO DO SHOW: ");
+    scanf("%d",&codigo);
+    printf("V----------------------------------\n");
 }
 
 void pesquisar_Show(){
+    int codigo;
     char titulo[16] = "PESQUISAR SHOW";
     func_Ani_Left(titulo);
+
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CODIGO DO SHOW: ");
+    scanf("%d",&codigo);
+    printf("V----------------------------------\n");
 }
 
 
@@ -621,6 +642,7 @@ void func_Ani_Left(char titulo[30]){
     }
  
 }
+
 
 
 
