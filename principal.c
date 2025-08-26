@@ -7,7 +7,6 @@
     #include <windows.h>  //Trecho de código tirado do ChatGPT
 #else // Se não, Linux,Mcos, use:
     #include <unistd.h>
-    #include <pthread.h>
 #endif
 
 
@@ -19,6 +18,8 @@ void equipe();
 void ani_Encerrar();
 void func_Ani(int);
 void func_Ani_Left();
+void func_Ani_Thread();
+
 
 //MÓDULOS
 void ingresso();
@@ -152,7 +153,8 @@ int main() {
         printf("###                                                                               ###\n");
         func_Ani(tempo);
         printf("##                              0 - SAIR : ");
-        scanf(" %c",&executar);
+        scanf("%c",&executar);
+        getchar();
 
         if (executar == '1'){
             ingresso();
@@ -224,7 +226,8 @@ void ingresso(){
         func_Ani(tempo);
         printf("##                              0 - SAIR : ");
         scanf(" %c",&executar_I);
-        
+        getchar();
+
         if (executar_I == '1'){
             vender_Ingresso();
         }
@@ -285,6 +288,7 @@ void shows(){
         func_Ani(tempo);
         printf("##                              0 - SAIR : ");
         scanf(" %c",&executar_S);
+        getchar();
 
         if (executar_S == '1'){
             cadastrar_Show();
@@ -391,30 +395,92 @@ void sessoes(){
 
 //############### FUNÇÕES MÓDULO INGRESSO ##################################################
 void vender_Ingresso(){
+    char nome[30];
+    int codigo_Show;
+    char cadeira[2];
     char titulo[16] = "VENDER INGRESSO";
+    
     func_Ani_Left(titulo);
+    
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O NOME: ");
+    gets(nome);
+    printf("V----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DO SHOW: ");
+    scanf("%d",&codigo_Show);
+    getchar();
+    printf("V----------------------------------\n");
+    printf("|  ESCOLHA SUA CADEIRA: ");
+    gets(cadeira);
+    printf("V----------------------------------\n");
+    system("pause");
 }
 
 void excluir_Ingresso(){
-    char titulo[16] = "EXCLUIR INGRESSO";
+    int codigo;
+    char titulo[19] = "EXCLUIR INGRESSO";
     func_Ani_Left(titulo);
+    
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CODIGO DO INGRESSO: ");
+    scanf("%d",&codigo);
+    printf("V----------------------------------\n");
+    system("pause");
 }
 
 void atualizar_Ingresso(){
+    int codigo;
     char titulo[19] = "ATUALIZAR INGRESSO";
     func_Ani_Left(titulo);
+
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CODIGO DO INGRESSO: ");
+    scanf("%d",&codigo);
+    printf("V----------------------------------\n");
+    system("pause");
 }
 
 void pesquisar_Ingresso(){
+    int codigo;
     char titulo[19] = "PESQUISAR INGRESSO";
     func_Ani_Left(titulo);
+
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CODIGO DO INGRESSO: ");
+    scanf("%d",&codigo);
+    printf("V----------------------------------\n");
+    system("pause");
 }
 
 
 //############### FUNÇÕES MÓDULO SHOWS #####################################################
 void cadastrar_Show(){
+    char nome[50];
+    char data[10];
+    char duracao[4];
+    char personagens[100];
     char titulo[16] = "CADASTRAR SHOW";
     func_Ani_Left(titulo);
+
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O NOME DO SHOW: ");
+    gets(nome);
+    printf("V----------------------------------\n");
+    printf("|  INSIRA A/AS DATAS DO SHOW: ");
+    gets(data);
+    printf("V----------------------------------\n");
+    printf("|  INSIRA A/AS DURACAOS DO SHOW: ");
+    gets(duracao);
+    printf("V----------------------------------\n");
+    printf("|  INSIRA O/OS PERSONAGENS DO SHOW: ");
+    gets(personagens);
+    printf("V----------------------------------\n");
+    system("pause");
 
 }
 
@@ -555,3 +621,11 @@ void func_Ani_Left(char titulo[30]){
     }
  
 }
+
+
+
+
+
+
+
+
