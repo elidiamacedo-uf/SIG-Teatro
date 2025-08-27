@@ -158,37 +158,24 @@ int main() {
 
         if (executar == '1'){
             ingresso();
-            }
+        }
+        else if (executar == '2'){
+            shows();
+        }
+        else if (executar == '3'){
+            sessoes();
+        }
+        else if (executar == '4'){
+            tecnicos();
+        }
+        else if (executar == '0'){
+            parada = false;
+            ani_Encerrar();
+        }
         else{
-            if (executar == '2'){      //Sistema IF-ELESE-IF Tirado do Livro Linguagem C Completa e Descomplicada de André Backes  página 84
-                shows();
-            }
-            else{
-                if (executar == '3'){
-                    sessoes();
-                }
-                else{
-                    if (executar == '4'){
-                        tecnicos(); 
-                    }
-                    else{
-                        if (executar == '5'){
-                            printf("MÓDULO EM REFORMA");
-                        }
-                        else{
-                            if (executar == '0'){
-                                ani_Encerrar();
-                                parada = false;
-                            }
-                            else{
-                                printf("\n \n");
-                                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-                                system("pause");
-                            }
-                        }
-                    }
-                }
-            }
+            printf("\n \n");
+            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+            system("pause");
         }
     }
 return 0;            
@@ -231,30 +218,22 @@ void ingresso(){
         if (executar_I == '1'){
             vender_Ingresso();
         }
+        else if (executar_I == '2'){
+            excluir_Ingresso();
+        }
+        else if (executar_I == '3'){
+            atualizar_Ingresso();
+        }
+        else if (executar_I == '4'){
+            pesquisar_Ingresso();
+        }
+        else if (executar_I == '0'){
+            parada_I = false;
+        }
         else{
-            if (executar_I == '2'){
-                excluir_Ingresso();
-            }
-            else{
-                if (executar_I == '3'){
-                    atualizar_Ingresso();
-                }
-                else{
-                    if (executar_I == '4'){
-                        pesquisar_Ingresso();
-                    }
-                    else{
-                        if (executar_I == '0'){
-                            parada_I = false;
-                        }
-                        else{
-                            printf("\n \n");
-                            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-                            system("pause");
-                        }
-                    }
-                }
-            }   
+            printf("\n \n");
+            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+            system("pause");
         }
     }
 }
@@ -293,30 +272,22 @@ void shows(){
         if (executar_S == '1'){
             cadastrar_Show();
         }
+        else if (executar_S == '2'){
+            excluir_Show();
+        }
+        else if (executar_S == '3'){
+            atualizar_Show();
+        }
+        else if (executar_S == '4'){
+            pesquisar_Show();
+        }
+        else if (executar_S == '0'){
+            parada_S = false;
+        }
         else{
-            if (executar_S == '2'){
-                excluir_Show();
-            }
-            else{
-                if (executar_S == '3'){
-                    atualizar_Show();
-                }
-                else{
-                    if (executar_S == '4'){
-                        pesquisar_Show();
-                    }
-                    else{
-                        if (executar_S == '0'){
-                            parada_S = false;
-                        }
-                        else{
-                            printf("\n \n");
-                            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-                            system("pause");
-                        }
-                    }
-                }
-            }
+            printf("\n \n");
+            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+            system("pause");
         }
     }
 }
@@ -335,24 +306,17 @@ void tecnicos(){
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                     ###\n");
         scanf(" %d", &escolha);
     //repetição e afins
-       if (escolha == '1'){
-        cadastro_Tecnico();
-       }
-       else{
-        if (escolha == '2'){
+        if (escolha == '1'){
+            cadastro_Tecnico();
+        }
+        else if (escolha == '2'){
             pesquisar_Tecnico();
         }
-        else{
-            if (escolha == '3'){
-                atualizar_Tecnico();
-            }
-            else{
-                if (escolha == '4'){
-                    excluir_Tecnico();
-                }
-            }
+        else if (escolha == '3'){
+            atualizar_Tecnico();
         }
-        
+        else if (escolha == '4'){
+            excluir_Tecnico();
        }
 }
 
@@ -371,26 +335,18 @@ void sessoes(){
         scanf("%d", &escolha);
 //repetição e afins
         if (escolha == '1'){
-        criar_Sessao();
-       }
-       else{
-        if (escolha == '2'){
+            criar_Sessao();
+        }
+        else if (escolha == '2'){
             procurar_Sessao();
         }
-        else{
-            if (escolha == '3'){
-                atualizar_Sessao();
-            }
-            else{
-                if (escolha == '4'){
-                    excluir_Sessao();
-                }
-            }
+        else if (escolha == '3'){
+            atualizar_Sessao();
         }
-        
+        else if (escolha == '4'){
+            excluir_Sessao();
        }
 }
-
 
 
 //############### FUNÇÕES MÓDULO INGRESSO ##################################################
