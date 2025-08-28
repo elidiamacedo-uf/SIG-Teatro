@@ -293,31 +293,53 @@ void shows(){
 }
 
 void tecnicos(){
-    int escolha;
+    bool parada_T = true;
+    while (parada_T) {
+        char executar_T;
         system("clear || cls");
+        printf("#####################################################################################\n");
+        func_Ani(tempo);
+        printf("   +++                                 TÉCNICOS                                  +++\n");
+        func_Ani(tempo);
+        printf("#####################################################################################\n");
+        func_Ani(tempo);
         printf("###                             1 - CADASTRAR TECNICO                              ###\n");
         func_Ani(tempo);
+        printf("###                                                                                ###\n");
         printf("###                             2 - PROCURAR TÉCNICO                               ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             3 - ATUALIZAR TÉCNICO                              ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             4 - DELETAR TÉCNICO                                ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                     ###\n");
-        scanf(" %d", &escolha);
-    //repetição e afins
-        if (escolha == '1'){
+        scanf(" %c", &executar_T);
+        getchar();
+
+        if (executar_T == '1'){
             cadastro_Tecnico();
         }
-        else if (escolha == '2'){
+        else if (executar_T == '2'){
             pesquisar_Tecnico();
         }
-        else if (escolha == '3'){
+        else if (executar_T == '3'){
             atualizar_Tecnico();
         }
-        else if (escolha == '4'){
+        else if (executar_T == '4'){
             excluir_Tecnico();
-       }
+        }
+        else if (executar_T == '0'){
+            parada_T = false;
+        }
+        else{
+            printf("\n \n");
+            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+            system("pause");
+        }
+    }
 }
 
 void sessoes(){
