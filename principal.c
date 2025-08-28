@@ -543,7 +543,7 @@ void ani_Encerrar(){
         }
     }
     system("clear||cls");
-    printf("PRORGRAMA ENCERRADO");
+    printf("PROGRAMA ENCERRADO\n");
 }
 
 void func_Ani(int tempo){  //Função retirada do ChatGPT
