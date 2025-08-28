@@ -539,6 +539,7 @@ void ani_Encerrar(){
         for (j = 0; j < 5; j++){
             func_Ani(300);
             printf(". ");
+            fflush(stdout); 
         }
     }
     system("clear||cls");
@@ -549,10 +550,11 @@ void func_Ani(int tempo){  //Função retirada do ChatGPT
     #ifdef _WIN64
         Sleep(tempo);
     #else
-        struct timespec ts;
-        ts.tv_sec = tempo / 1000;                 
-        ts.tv_nsec = (tempo % 1000) * 1000000L;   
-        nanosleep(&ts, NULL);
+        usleep(tempo * 1000); 
+        //struct timespec ts;
+        //ts.tv_sec = tempo / 1000;                 
+        //ts.tv_nsec = (tempo % 1000) * 1000000L;   
+        //nanosleep(&ts, NULL);
     #endif
 }
 
