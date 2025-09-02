@@ -523,8 +523,9 @@ void pesquisar_Show(){
 
 //############### FUNCÕES MÓDULO TÉCNICO ###################################################
 void cadastro_Tecnico(){
-    int cpf;
+    int cpf[11];
     char nome[30];
+    char funcao[16];
     char email[40];
     char telefone[16];
     
@@ -541,6 +542,10 @@ void cadastro_Tecnico(){
     fgets(nome, sizeof(nome), stdin);
 
     printf("-----------------------------------\n");
+    printf("|  INSIRA A FUNÇÃO DO TÉCNICO: ");
+    fgets(funcao, sizeof(funcao), stdin);
+
+    printf("-----------------------------------\n");
     printf("|  INSIRA O EMAIL DO TÉCNICO: ");
     fgets(email,sizeof(email),stdin);
     printf("-----------------------------------\n");//
@@ -552,28 +557,48 @@ void cadastro_Tecnico(){
 }
 
 void atualizar_Tecnico(){
+    int cpf;
     
-    printf("CPF: ");
-    printf("Nome completo: ");
-    printf("Email:");
-    printf("Telefone");
+    char titulo[19] = "ATUALIZAR TÉCNICO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  
+    scanf("%d", &cpf);
+    getchar();
+    // procurar se há esse cpf
+    // se sim, para alterar os dados tem que saber quais dados quer alterar
 }
 
 void pesquisar_Tecnico(){
-    system("clear || cls");
-    printf("CPF: ");
+    int cpf;
+    
+    char titulo[19] = "PESQUISAR TÉCNICO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    scanf("%d", &cpf);
+    getchar();
 }
 
 void excluir_Tecnico(){
-    system("clear || cls");
-    printf("CPF: ");
+    int cpf;
+    
+    char titulo[19] = "EXCLUIR TÉCNICO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    scanf("%d", &cpf);
+    getchar();
 }
 
 
-//############### FUNÇÕES MÓDULO TÉCNICO ###################################################
-void criar_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+//######################### FUNÇÕES MÓDULO SESSÃO ###################################################
+void cadastrar_Sessao(){
+
+
 }
 
 void procurar_Sessao(){
