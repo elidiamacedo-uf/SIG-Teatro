@@ -14,6 +14,10 @@
 void proj_Descrit();
 void equipe();
 
+//DATA E HORA
+void mostrar_tempo();
+
+
 //ANIMAÇÕES
 void ani_Encerrar();
 void func_Ani(int);
@@ -35,7 +39,7 @@ void atualizar_Show();
 void pesquisar_Show();
 
 void sessoes();
-void criar_Sessao();
+void cadastrar_Sessao();
 void procurar_Sessao();
 void atualizar_Sessao();
 void excluir_Sessao();
@@ -353,7 +357,7 @@ void sessoes(){
         func_Ani(tempo);
         printf("#####################################################################################\n");
         func_Ani(tempo);
-        printf("###                             1 - CRIAR SESSÃO                                 ###\n");
+        printf("###                             1 - CADASTRAR SESSÃO                                 ###\n");
         func_Ani(tempo);
         printf("###                                                                              ###\n");
         printf("###                             2 - PROCURAR SESSÃO                              ###\n");
@@ -370,7 +374,7 @@ void sessoes(){
         getchar();
 
         if (executar_P == '1'){
-            criar_Sessao();
+            cadastrar_Sessao();
         }
         else if (executar_P == '2'){
             procurar_Sessao();
@@ -597,10 +601,9 @@ void excluir_Tecnico(){
 void cadastrar_Sessao(){
     int codigo_sessao;
     char nome_show;
-    char data; //pesquisar se é assim
+    char data; //até o momento, nao há nenhuma comparação de data e hora
     char hora; //pesquisar
     char preco;
-
 
     char titulo[19]= "CADASTRAR SESSÃO";
     func_Ani_Left(titulo);
@@ -611,7 +614,7 @@ void cadastrar_Sessao(){
     scanf("%d", &codigo_sessao);
     getchar();
 
-
+    mostrar_tempo();
 
 }
 
@@ -629,6 +632,20 @@ void excluir_Sessao(){
     system("clear || cls");
     printf("ID SESSÃO: ");
 }
+
+//############# FUNÇÕES DE DATA E HORA ##############################
+
+void mostrar_tempo(){
+    time_t agora;
+    time(&agora);
+
+    printf(" %s", ctime(&agora));
+
+}
+
+
+
+
 
 
 //################# FUNÇÕES DE ANIMAÇÃO ##################################################
