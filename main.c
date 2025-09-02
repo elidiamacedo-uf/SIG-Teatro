@@ -603,9 +603,11 @@ void cadastrar_Sessao(){
     int tempo = 100;
 
     char nome_show[50];
-    char data[11]; //até o momento, nao há nenhuma comparação de data e hora
-    char hora[6]; //pesquisar
+    char data[32]; //até o momento, nao há nenhuma comparação de data e hora
+    char hora[16]; //pesquisar
     float preco;
+    mostrar_data_hora(data, hora); //funcao adicionada para hora e data atuais
+
 
     char titulo[19]= "CADASTRAR SESSÃO";
     func_Ani_Left(titulo);
@@ -624,9 +626,14 @@ void cadastrar_Sessao(){
     printf("|  INSIRA O PREÇO DO SHOW: ");
     scanf("%f", &preco);
 
-    mostrar_data_hora(tempo); //funcao adicionada para hora e data atuais
+    printf("-----------------------------------\n");
+    printf("|  DATA DA SESSÃO: %s\n  ", data);
 
-    printf("\nResumo da sessão:\n");
+    printf("-----------------------------------\n");
+    printf("|  HORA DA SESSÃO: %s\n  ", hora);
+
+
+    printf("\nRESUMO DA SESSÃO:\n");
     printf("Codigo: %d\n", codigo_show);
     printf("Show: %s\n", nome_show);
     printf("Data: %s\n", data);
@@ -679,21 +686,16 @@ void excluir_Sessao(){
 
 //############# FUNÇÕES DE DATA E HORA ##############################
 
-void mostrar_data_hora(int tempo){
-    char data[32];
-    char hora[16];
+void mostrar_data_hora(char * data, char * hora){
 
     time_t agora; //Função tirada do petbcc.ufscar.br/timefuncoes/#time e adaptada com auxílio de IA
     time(&agora); //time_t => EPOCH / 01/01/1970
 
     struct tm *t = localtime(&agora); //struct tm *t quebra o epoch e deixa legível e formatado
 
-    snprintf(data, sizeof(data), "%02d/%02d/%04d", t->tm_mday, t->tm_mon + 1, t->tm_year + 1900);
-    snprintf(hora, sizeof(hora), "%02d:%02d", t->tm_hour, t-> tm_min); // formatação para data e hora
+    snprintf(data, 32, "%02d/%02d/%04d", t->tm_mday, t->tm_mon + 1, t->tm_year + 1900);
+    snprintf(hora, 16, "%02d:%02d", t->tm_hour, t-> tm_min); // formatação para data e hora
     
-    printf("Data: %s\n", data);
-    printf("Hora: %s\n", hora);
-
     func_Ani(tempo);
 }
 
