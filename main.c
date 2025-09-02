@@ -14,6 +14,10 @@
 void proj_Descrit();
 void equipe();
 
+//DATA E HORA
+void mostrar_data_hora();
+
+
 //ANIMAÇÕES
 void ani_Encerrar();
 void func_Ani(int);
@@ -35,7 +39,7 @@ void atualizar_Show();
 void pesquisar_Show();
 
 void sessoes();
-void criar_Sessao();
+void cadastrar_Sessao();
 void procurar_Sessao();
 void atualizar_Sessao();
 void excluir_Sessao();
@@ -293,59 +297,103 @@ void shows(){
 }
 
 void tecnicos(){
-    int escolha;
+    bool parada_T = true;
+    while (parada_T) {
+        char executar_T;
         system("clear || cls");
+        printf("#####################################################################################\n");
+        func_Ani(tempo);
+        printf("   +++                                 TÉCNICOS                                  +++\n");
+        func_Ani(tempo);
+        printf("#####################################################################################\n");
+        func_Ani(tempo);
         printf("###                             1 - CADASTRAR TECNICO                              ###\n");
         func_Ani(tempo);
+        printf("###                                                                                ###\n");
         printf("###                             2 - PROCURAR TÉCNICO                               ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             3 - ATUALIZAR TÉCNICO                              ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             4 - DELETAR TÉCNICO                                ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                     ###\n");
-        scanf(" %d", &escolha);
-    //repetição e afins
-        if (escolha == '1'){
+        scanf(" %c", &executar_T);
+        getchar();
+
+        if (executar_T == '1'){
             cadastro_Tecnico();
         }
-        else if (escolha == '2'){
+        else if (executar_T == '2'){
             pesquisar_Tecnico();
         }
-        else if (escolha == '3'){
+        else if (executar_T == '3'){
             atualizar_Tecnico();
         }
-        else if (escolha == '4'){
+        else if (executar_T == '4'){
             excluir_Tecnico();
-       }
+        }
+        else if (executar_T == '0'){
+            parada_T = false;
+        }
+        else{
+            printf("\n \n");
+            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+            system("pause");
+        }
+    }
 }
 
 void sessoes(){
-    int escolha;
+    bool parada_P = true;
+    while (parada_P) {
+        char executar_P;
         system("clear || cls");
-        printf("###                             1 - CRIAR SESSÃO                                 ###\n");
+        printf("#####################################################################################\n");
         func_Ani(tempo);
+        printf("   +++                                 SESSÃO                                    +++\n");
+        func_Ani(tempo);
+        printf("#####################################################################################\n");
+        func_Ani(tempo);
+        printf("###                             1 - CADASTRAR SESSÃO                                 ###\n");
+        func_Ani(tempo);
+        printf("###                                                                              ###\n");
         printf("###                             2 - PROCURAR SESSÃO                              ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             3 - ATUALIZAR SESSÃO                             ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             4 - DELETAR SESSÃO                               ###\n");
+        printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                   ###\n");
-        scanf("%d", &escolha);
-//repetição e afins
-        if (escolha == '1'){
-            criar_Sessao();
+        scanf(" %c", &executar_P);
+        getchar();
+
+        if (executar_P == '1'){
+            cadastrar_Sessao();
         }
-        else if (escolha == '2'){
+        else if (executar_P == '2'){
             procurar_Sessao();
         }
-        else if (escolha == '3'){
+        else if (executar_P == '3'){
             atualizar_Sessao();
         }
-        else if (escolha == '4'){
+        else if (executar_P == '4'){
             excluir_Sessao();
-       }
+        }
+        else if (executar_P == '0'){
+            parada_P = false;
+        }
+        else{
+            printf("\n \n");
+            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+            system("pause");
+        }
+    }
 }
 
 
@@ -382,7 +430,7 @@ void excluir_Ingresso(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO INGRESSO: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
     system("pause");
 }
 
@@ -395,7 +443,7 @@ void atualizar_Ingresso(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO INGRESSO: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
     system("pause");
 }
 
@@ -408,14 +456,14 @@ void pesquisar_Ingresso(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO INGRESSO: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
     system("pause");
 }
 
 
 //############### FUNÇÕES MÓDULO SHOWS #####################################################
 void cadastrar_Show(){
-    char nome[50];
+    char nome[30]; 
     char data[10];
     char duracao[4];
     char personagens[100];
@@ -473,58 +521,187 @@ void pesquisar_Show(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO SHOW: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
 }
 
 
 //############### FUNCÕES MÓDULO TÉCNICO ###################################################
 void cadastro_Tecnico(){
-    system("clear || cls");
-    printf("CPF: ");
-    printf("Nome completo: ");
-    printf("Email:");
-    printf("Telefone");
+    char cpf[15];
+    char nome[30];
+    char funcao[16];
+    char email[40];
+    char telefone[16];
+    
+    char titulo[19] = "CADASTRAR TÉCNICO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    fgets(cpf, sizeof(cpf), stdin);
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O NOME DO TÉCNICO: ");
+    fgets(nome, sizeof(nome), stdin);
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA A FUNÇÃO DO TÉCNICO: ");
+    fgets(funcao, sizeof(funcao), stdin);
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O EMAIL DO TÉCNICO: ");
+    fgets(email,sizeof(email),stdin);
+    printf("-----------------------------------\n");//
+    
+    printf("|  INSIRA O TELEFONE: ");
+    fgets(telefone,sizeof(telefone),stdin);
+    printf("-----------------------------------\n");
+
 }
 
 void atualizar_Tecnico(){
-    system("clear || cls");
-    printf("CPF: ");
-    printf("Nome completo: ");
-    printf("Email:");
-    printf("Telefone");
+    char cpf[15];
+    char titulo[19] = "ATUALIZAR TÉCNICO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    fgets(cpf, sizeof(cpf), stdin);
+
+    // procurar se há esse cpf
+    // se sim, para alterar os dados tem que saber quais dados quer alterar
 }
 
 void pesquisar_Tecnico(){
-    system("clear || cls");
-    printf("CPF: ");
+    char cpf[15];
+    
+    char titulo[19] = "PESQUISAR TÉCNICO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    fgets(cpf, sizeof(cpf), stdin);
+
 }
 
 void excluir_Tecnico(){
-    system("clear || cls");
-    printf("CPF: ");
+    char cpf[15];
+    char titulo[19] = "EXCLUIR TÉCNICO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    fgets(cpf, sizeof(cpf), stdin);
+
 }
 
 
-//############### FUNÇÕES MÓDULO TÉCNICO ###################################################
-void criar_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+//######################### FUNÇÕES MÓDULO SESSÃO ###################################################
+void cadastrar_Sessao(){
+    int codigo_show;
+    int tempo = 100;
+
+    char nome_show[50];
+    char data[32]; //até o momento, nao há nenhuma comparação de data e hora
+    char hora[16]; //pesquisar
+    float preco;
+    mostrar_data_hora(data, hora); //funcao adicionada para hora e data atuais
+
+
+    char titulo[19]= "CADASTRAR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: ");  
+    scanf("%d", &codigo_show);
+    getchar();
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O NOME DO SHOW: ");
+    fgets(nome_show, sizeof(nome_show), stdin);
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O PREÇO DO SHOW: ");
+    scanf("%f", &preco);
+
+    printf("-----------------------------------\n");
+    printf("|  DATA DA SESSÃO: %s\n  ", data);
+
+    printf("-----------------------------------\n");
+    printf("|  HORA DA SESSÃO: %s\n  ", hora);
+
+
+    printf("\nRESUMO DA SESSÃO:\n");
+    printf("Codigo: %d\n", codigo_show);
+    printf("Show: %s\n", nome_show);
+    printf("Data: %s\n", data);
+    printf("Hora: %s\n", hora);
+    printf("Preço: R$ %.2f\n", preco);
+    system("pause");
 }
 
 void procurar_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+    int codigo_show;
+
+    char titulo[19]= "PROCURAR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: "); 
+    scanf("%d", &codigo_show);
+    getchar();
+
 }
 
 void atualizar_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+    int codigo_show;
+
+    char titulo[19]= "ATUALIZAR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: "); 
+    scanf("%d", &codigo_show);
+    getchar();
+
 }
 
 void excluir_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+    int codigo_show;
+
+    char titulo[19]= "EXCLUIR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: "); 
+    scanf(" %d", &codigo_show);
+    getchar();
+
 }
+
+//############# FUNÇÕES DE DATA E HORA ##############################
+
+void mostrar_data_hora(char * data, char * hora){
+
+    time_t agora; //Função tirada do petbcc.ufscar.br/timefuncoes/#time e adaptada com auxílio de IA
+    time(&agora); //time_t => EPOCH / 01/01/1970
+
+    struct tm *t = localtime(&agora); //struct tm *t quebra o epoch e deixa legível e formatado
+
+    snprintf(data, 32, "%02d/%02d/%04d", t->tm_mday, t->tm_mon + 1, t->tm_year + 1900);
+    snprintf(hora, 16, "%02d:%02d", t->tm_hour, t-> tm_min); // formatação para data e hora
+    
+    func_Ani(tempo);
+}
+
+
+
+
 
 
 //################# FUNÇÕES DE ANIMAÇÃO ##################################################
@@ -593,19 +770,10 @@ void func_Ani_Left(char titulo[30]){
     }
     printf("\n");
 
-    // Terceira Linha
+    // Terceira Linha   
     for(i = 0; i<70; i++){  
         printf("#");
         func_Ani(1);
     }
  
 }
-
-
-
-
-
-
-
-
-
