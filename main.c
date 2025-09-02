@@ -459,7 +459,7 @@ void pesquisar_Ingresso(){
 
 //############### FUNÇÕES MÓDULO SHOWS #####################################################
 void cadastrar_Show(){
-    char nome[50];
+    char nome[30]; 
     char data[10];
     char duracao[4];
     char personagens[100];
@@ -523,11 +523,17 @@ void pesquisar_Show(){
 
 //############### FUNCÕES MÓDULO TÉCNICO ###################################################
 void cadastro_Tecnico(){
-    system("clear || cls");
-    printf("CPF: ");
-    printf("Nome completo: ");
-    printf("Email:");
-    printf("Telefone");
+    int cpf;
+    char titulo[19] = "CADASTRAR INGRESSO";
+    char nome[50];
+
+    func_Ani_Left(titulo);
+
+
+
+    //printf("Nome completo: ");
+    //printf("Email:");
+    //printf("Telefone");
 }
 
 void atualizar_Tecnico(){
