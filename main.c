@@ -612,7 +612,7 @@ void cadastrar_Sessao(){
     printf("\n \n");
 
     printf("-----------------------------------\n");
-    printf("|  INSIRA O CÓDIGO DA SESSÃO: ");  //** Deixarei assim por enquanto, sem validação
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: ");  
     scanf("%d", &codigo_show);
     getchar();
 
@@ -627,7 +627,7 @@ void cadastrar_Sessao(){
     mostrar_data_hora(tempo); //funcao adicionada para hora e data atuais
 
     printf("\nResumo da sessão:\n");
-    printf("Codigo: %s\n", codigo_show);
+    printf("Codigo: %d\n", codigo_show);
     printf("Show: %s\n", nome_show);
     printf("Data: %s\n", data);
     printf("Hora: %s\n", hora);
@@ -636,18 +636,45 @@ void cadastrar_Sessao(){
 }
 
 void procurar_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+    int codigo_show;
+
+    char titulo[19]= "PROCURAR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: "); 
+    scanf("%d", &codigo_show);
+    getchar();
+
 }
 
 void atualizar_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+    int codigo_show;
+
+    char titulo[19]= "ATUALIZAR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: "); 
+    scanf("%d", &codigo_show);
+    getchar();
+
 }
 
 void excluir_Sessao(){
-    system("clear || cls");
-    printf("ID SESSÃO: ");
+    int codigo_show;
+
+    char titulo[19]= "EXCLUIR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: "); 
+    scanf(" %d", &codigo_show);
+    getchar();
+
 }
 
 //############# FUNÇÕES DE DATA E HORA ##############################
