@@ -549,12 +549,12 @@ void cadastro_Tecnico(){
     fgets(funcao, sizeof(funcao), stdin);
 
     printf("-----------------------------------\n");
-    printf("|  INSIRA O EMAIL DO TÉCNICO: ");
+    printf("|  INSIRA O EMAIL DO TÉCNICO: "); //validação
     fgets(email,sizeof(email),stdin);
     printf("-----------------------------------\n");//
     
     printf("|  INSIRA O TELEFONE: ");
-    fgets(telefone,sizeof(telefone),stdin);
+    fgets(telefone,sizeof(telefone),stdin); //validar
     printf("-----------------------------------\n");
 
 }
