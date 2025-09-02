@@ -523,7 +523,7 @@ void pesquisar_Show(){
 
 //############### FUNCÕES MÓDULO TÉCNICO ###################################################
 void cadastro_Tecnico(){
-    int cpf[11];
+    char cpf[15];
     char nome[30];
     char funcao[16];
     char email[40];
@@ -534,8 +534,7 @@ void cadastro_Tecnico(){
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
-    scanf("%d", &cpf);
-    getchar();
+    fgets(cpf, sizeof(cpf), stdin);
 
     printf("-----------------------------------\n");
     printf("|  INSIRA O NOME DO TÉCNICO: ");
@@ -597,6 +596,22 @@ void excluir_Tecnico(){
 
 //######################### FUNÇÕES MÓDULO SESSÃO ###################################################
 void cadastrar_Sessao(){
+    int codigo_sessao;
+    char nome_show;
+    char data; //pesquisar se é assim
+    char hora; //pesquisar
+    char preco;
+
+
+    char titulo[19]= "CADASTRAR SESSÃO";
+    func_Ani_Left(titulo);
+    printf("\n \n");
+
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CÓDIGO DA SESSÃO: ");  //** Deixarei assim por enquanto, sem validação
+    scanf("%d", &codigo_sessao);
+    getchar();
+
 
 
 }
