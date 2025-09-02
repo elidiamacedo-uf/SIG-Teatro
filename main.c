@@ -15,7 +15,7 @@ void proj_Descrit();
 void equipe();
 
 //DATA E HORA
-void mostrar_tempo();
+void mostrar_data_hora();
 
 
 //ANIMAÇÕES
@@ -599,11 +599,13 @@ void excluir_Tecnico(){
 
 //######################### FUNÇÕES MÓDULO SESSÃO ###################################################
 void cadastrar_Sessao(){
-    int codigo_sessao;
-    char nome_show;
-    char data; //até o momento, nao há nenhuma comparação de data e hora
-    char hora; //pesquisar
-    char preco;
+    int codigo_show;
+    int tempo = 100;
+
+    char nome_show[50];
+    char data[11]; //até o momento, nao há nenhuma comparação de data e hora
+    char hora[6]; //pesquisar
+    float preco;
 
     char titulo[19]= "CADASTRAR SESSÃO";
     func_Ani_Left(titulo);
@@ -611,11 +613,25 @@ void cadastrar_Sessao(){
 
     printf("-----------------------------------\n");
     printf("|  INSIRA O CÓDIGO DA SESSÃO: ");  //** Deixarei assim por enquanto, sem validação
-    scanf("%d", &codigo_sessao);
+    scanf("%d", &codigo_show);
     getchar();
 
-    mostrar_tempo();
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O NOME DO SHOW: ");
+    fgets(nome_show, sizeof(nome_show), stdin);
 
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O PREÇO DO SHOW: ");
+    scanf("%f", &preco);
+
+    mostrar_data_hora(tempo); //funcao adicionada para hora e data atuais
+
+    printf("\nResumo da sessão:\n");
+    printf("Show: %s\n", nome_show);
+    printf("Data: %s\n", data);
+    printf("Hora: %s\n", hora);
+    printf("Preço: R$ %.2f\n", preco);
+    system("pause");
 }
 
 void procurar_Sessao(){
@@ -635,12 +651,22 @@ void excluir_Sessao(){
 
 //############# FUNÇÕES DE DATA E HORA ##############################
 
-void mostrar_tempo(){
-    time_t agora;
-    time(&agora);
+void mostrar_data_hora(int tempo){
+    char data[32];
+    char hora[16];
 
-    printf(" %s", ctime(&agora));
+    time_t agora; //Função tirada do petbcc.ufscar.br/timefuncoes/#time e adaptada com auxílio de IA
+    time(&agora); //time_t => EPOCH / 01/01/1970
 
+    struct tm *t = localtime(&agora); //struct tm *t quebra o epoch e deixa legível e formatado
+
+    snprintf(data, sizeof(data), "%02d/%02d/%04d", t->tm_mday, t->tm_mon + 1, t->tm_year + 1900);
+    snprintf(hora, sizeof(hora), "%02d:%02d", t->tm_hour, t-> tm_min); // formatação para data e hora
+    
+    printf("Data: %s\n", data);
+    printf("Hora: %s\n", hora);
+
+    func_Ani(tempo);
 }
 
 
