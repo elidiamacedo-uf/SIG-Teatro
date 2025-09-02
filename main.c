@@ -569,27 +569,27 @@ void atualizar_Tecnico(){
 }
 
 void pesquisar_Tecnico(){
-    int cpf;
+    char cpf[15];
     
     char titulo[19] = "PESQUISAR TÉCNICO";
     func_Ani_Left(titulo);
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
-    scanf("%d", &cpf);
-    getchar();
+    fgets(cpf, sizeof(cpf), stdin);
+
 }
 
 void excluir_Tecnico(){
-    int cpf;
-    
+    char cpf[15];
     char titulo[19] = "EXCLUIR TÉCNICO";
     func_Ani_Left(titulo);
     printf("\n \n");
+
     printf("-----------------------------------\n");
     printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
-    scanf("%d", &cpf);
-    getchar();
+    fgets(cpf, sizeof(cpf), stdin);
+
 }
 
 
