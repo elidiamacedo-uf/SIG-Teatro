@@ -426,7 +426,7 @@ void excluir_Ingresso(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO INGRESSO: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
     system("pause");
 }
 
@@ -439,7 +439,7 @@ void atualizar_Ingresso(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO INGRESSO: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
     system("pause");
 }
 
@@ -452,7 +452,7 @@ void pesquisar_Ingresso(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO INGRESSO: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
     system("pause");
 }
 
@@ -517,27 +517,42 @@ void pesquisar_Show(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO SHOW: ");
     scanf("%d",&codigo);
-    printf("V----------------------------------\n");
+    printf("-----------------------------------\n");
 }
 
 
 //############### FUNCÕES MÓDULO TÉCNICO ###################################################
 void cadastro_Tecnico(){
     int cpf;
-    char titulo[19] = "CADASTRAR INGRESSO";
-    char nome[50];
-
+    char nome[30];
+    char email[40];
+    char telefone[16];
+    
+    char titulo[19] = "CADASTRAR TÉCNICO";
     func_Ani_Left(titulo);
+    printf("\n \n");
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    scanf("%d", &cpf);
+    getchar();
 
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O NOME DO TÉCNICO: ");
+    fgets(nome, sizeof(nome), stdin);
 
+    printf("-----------------------------------\n");
+    printf("|  INSIRA O EMAIL DO TÉCNICO: ");
+    fgets(email,sizeof(email),stdin);
+    printf("-----------------------------------\n");//
+    
+    printf("|  INSIRA O TELEFONE: ");
+    fgets(telefone,sizeof(telefone),stdin);
+    printf("-----------------------------------\n");
 
-    //printf("Nome completo: ");
-    //printf("Email:");
-    //printf("Telefone");
 }
 
 void atualizar_Tecnico(){
-    system("clear || cls");
+    
     printf("CPF: ");
     printf("Nome completo: ");
     printf("Email:");
@@ -643,7 +658,7 @@ void func_Ani_Left(char titulo[30]){
     }
     printf("\n");
 
-    // Terceira Linha
+    // Terceira Linha   
     for(i = 0; i<70; i++){  
         printf("#");
         func_Ani(1);
