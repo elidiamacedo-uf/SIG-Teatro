@@ -627,6 +627,7 @@ void cadastrar_Sessao(){
     mostrar_data_hora(tempo); //funcao adicionada para hora e data atuais
 
     printf("\nResumo da sessão:\n");
+    printf("Codigo: %s\n", codigo_show);
     printf("Show: %s\n", nome_show);
     printf("Data: %s\n", data);
     printf("Hora: %s\n", hora);
