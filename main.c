@@ -556,15 +556,14 @@ void cadastro_Tecnico(){
 }
 
 void atualizar_Tecnico(){
-    int cpf;
-    
+    char cpf[15];
     char titulo[19] = "ATUALIZAR TÉCNICO";
     func_Ani_Left(titulo);
     printf("\n \n");
     printf("-----------------------------------\n");
-    printf("|  INSIRA O CPF DO TÉCNICO: ");  
-    scanf("%d", &cpf);
-    getchar();
+    printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
+    fgets(cpf, sizeof(cpf), stdin);
+
     // procurar se há esse cpf
     // se sim, para alterar os dados tem que saber quais dados quer alterar
 }
