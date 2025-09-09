@@ -361,8 +361,8 @@ void tecnicos(){
 
 void sessoes(){
     bool parada_P = true;
-    while (parada_P) {
-        char executar_P;
+    do {
+        int executar_P;
         system("clear || cls");
         printf("#####################################################################################\n");
         func_Ani(tempo);
@@ -379,34 +379,36 @@ void sessoes(){
         printf("###                             3 - ATUALIZAR SESSÃO                             ###\n");
         printf("###                                                                                ###\n");
         func_Ani(tempo);
-        printf("###                             4 - DELETAR SESSÃO                               ###\n");
+        printf("###                             4 - EXCLUIR SESSÃO                               ###\n");
         printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                   ###\n");
-        scanf(" %c", &executar_P);
+        scanf(" %d", &executar_P);
         getchar();
 
-        if (executar_P == '1'){
-            cadastrar_Sessao();
+        switch (executar_P) {
+            case 1:
+                cadastrar_Sessao();
+                break;
+            case 2:
+                procurar_Sessao();
+                break;
+            case 3:
+                atualizar_Sessao();
+                break;
+            case 4:
+                excluir_Sessao();
+                break;
+            case 0:
+                parada_P = false;
+                break;
+            default:
+                printf("\n \n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                system("pause");
+                break;
         }
-        else if (executar_P == '2'){
-            procurar_Sessao();
-        }
-        else if (executar_P == '3'){
-            atualizar_Sessao();
-        }
-        else if (executar_P == '4'){
-            excluir_Sessao();
-        }
-        else if (executar_P == '0'){
-            parada_P = false;
-        }
-        else{
-            printf("\n \n");
-            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-            system("pause");
-        }
-    }
+    } while (parada_P);
 }
 
 
