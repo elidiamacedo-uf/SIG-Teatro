@@ -122,10 +122,11 @@ void proj_Descrit(){
 
 int tempo = 100;
 int main() {
-    bool parada = true;
-    while (parada){ 
+    
+    bool parada = true;//
+    do { 
         system("clear||cls");
-        char executar;
+        int executar;
         
         //proj_Descrit();
         //equipe();
@@ -157,34 +158,39 @@ int main() {
         printf("###                                                                               ###\n");
         func_Ani(tempo);
         printf("##                              0 - SAIR : ");
-        scanf("%c",&executar);
+        
+        scanf("%d",&executar);
         getchar();
 
-        if (executar == '1'){
+        switch (executar)
+        {
+        case 1:
             ingresso();
-        }
-        else if (executar == '2'){
+            break;
+        case 2:
             shows();
-        }
-        else if (executar == '3'){
+            break;
+        case 3:
             sessoes();
-        }
-        else if (executar == '4'){
+            break;
+        case 4:
             tecnicos();
-        }
-        else if (executar == '0'){
+            break;        
+        case 0:
             parada = false;
+            break;
             ani_Encerrar();
-        }
-        else{
+
+        default:
             printf("\n \n");
             printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
             system("pause");
+            break;
         }
-    }
-return 0;            
-} 
+    } while (parada);
 
+    return 0;            
+} 
 
 
 
