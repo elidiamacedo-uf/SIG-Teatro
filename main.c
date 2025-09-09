@@ -309,8 +309,8 @@ void shows(){
 
 void tecnicos(){
     bool parada_T = true;
-    while (parada_T) {
-        char executar_T;
+    do {
+        int executar_T;
         system("clear || cls");
         printf("#####################################################################################\n");
         func_Ani(tempo);
@@ -331,30 +331,32 @@ void tecnicos(){
         printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             0 - VOLTAR AO MENU ANTERIOR...                     ###\n");
-        scanf(" %c", &executar_T);
+        scanf(" %d", &executar_T);
         getchar();
-
-        if (executar_T == '1'){
-            cadastro_Tecnico();
-        }
-        else if (executar_T == '2'){
-            pesquisar_Tecnico();
-        }
-        else if (executar_T == '3'){
-            atualizar_Tecnico();
-        }
-        else if (executar_T == '4'){
-            excluir_Tecnico();
-        }
-        else if (executar_T == '0'){
-            parada_T = false;
-        }
-        else{
-            printf("\n \n");
-            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-            system("pause");
-        }
-    }
+        
+        switch (executar_T){
+            case 1:
+                cadastro_Tecnico();
+                break;
+            case 2:
+                pesquisar_Tecnico();
+                break;
+            case 3:
+                atualizar_Tecnico();
+                break;
+            case 4:
+                excluir_Tecnico();
+                break;
+            case 0:
+                parada_T = false;
+                break;
+            default:
+                printf("\n \n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                system("pause");
+                break;
+            }
+    } while (parada_T);
 }
 
 void sessoes(){
