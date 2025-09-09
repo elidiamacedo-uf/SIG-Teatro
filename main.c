@@ -162,30 +162,29 @@ int main() {
         scanf("%d",&executar);
         getchar();
 
-        switch (executar)
-        {
-        case 1:
-            ingresso();
-            break;
-        case 2:
-            shows();
-            break;
-        case 3:
-            sessoes();
-            break;
-        case 4:
-            tecnicos();
-            break;        
-        case 0:
-            parada = false;
-            break;
-            ani_Encerrar();
+        switch (executar) {
+            case 1:
+                ingresso();
+                break;
+            case 2:
+                shows();
+                break;
+            case 3:
+                sessoes();
+                break;
+            case 4:
+                tecnicos();
+                break;        
+            case 0:
+                parada = false;
+                break;
+                ani_Encerrar();
 
-        default:
-            printf("\n \n");
-            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-            system("pause");
-            break;
+            default:
+                printf("\n \n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                system("pause");
+                break;
         }
     } while (parada);
 
@@ -193,11 +192,10 @@ int main() {
 } 
 
 
-
-void ingresso(){  
+void ingresso() {  
     bool parada_I = true;
-    while (parada_I){  
-        char executar_I;
+    do {  
+        int executar_I;
         system("clear||cls");
         printf("#####################################################################################\n");
         func_Ani(tempo);
@@ -222,36 +220,39 @@ void ingresso(){
         printf("###                                                                               ###\n");
         func_Ani(tempo);
         printf("##                              0 - VOLTAR AO MENU ANTERIOR...  ");
-        scanf(" %c",&executar_I);
+        
+        scanf(" %d",&executar_I);
         getchar();
-
-        if (executar_I == '1'){
-            vender_Ingresso();
+        
+        switch (executar_I) {
+            case 1:
+                vender_Ingresso();
+                break;
+            case 2:
+                excluir_Ingresso();
+                break;
+            case 3:
+                atualizar_Ingresso();
+                break;
+            case 4:
+                pesquisar_Ingresso();
+                break;
+            case 0:
+                parada_I = false;
+                break;
+            default:
+                printf("\n \n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                system("pause");
+                break;
         }
-        else if (executar_I == '2'){
-            excluir_Ingresso();
-        }
-        else if (executar_I == '3'){
-            atualizar_Ingresso();
-        }
-        else if (executar_I == '4'){
-            pesquisar_Ingresso();
-        }
-        else if (executar_I == '0'){
-            parada_I = false;
-        }
-        else{
-            printf("\n \n");
-            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-            system("pause");
-        }
-    }
+    } while (parada_I);
 }
 
 void shows(){  
     bool parada_S = true;
-    while (parada_S){  
-        char executar_S;
+    do {  
+        int executar_S;
         system("clear||cls");
         printf("#####################################################################################\n");
         func_Ani(tempo);
@@ -276,30 +277,33 @@ void shows(){
         printf("###                                                                               ###\n");
         func_Ani(tempo);
         printf("##                              0 - SAIR : ");
-        scanf(" %c",&executar_S);
+        
+        scanf(" %d",&executar_S);
         getchar();
 
-        if (executar_S == '1'){
-            cadastrar_Show();
+        switch (executar_S) {
+            case 1:
+                cadastrar_Show();
+                break;
+            case 2:
+                excluir_Show();
+                break;
+            case 3:
+                atualizar_Show();
+                break;
+            case 4:
+                pesquisar_Show();
+                break;
+            case 0:
+                parada_S = false;
+                break;
+            default:
+                printf("\n \n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                system("pause");
+                break;
         }
-        else if (executar_S == '2'){
-            excluir_Show();
-        }
-        else if (executar_S == '3'){
-            atualizar_Show();
-        }
-        else if (executar_S == '4'){
-            pesquisar_Show();
-        }
-        else if (executar_S == '0'){
-            parada_S = false;
-        }
-        else{
-            printf("\n \n");
-            printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-            system("pause");
-        }
-    }
+    } while (parada_S);
 }
 
 void tecnicos(){
