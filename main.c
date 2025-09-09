@@ -40,7 +40,7 @@ void pesquisar_Show();
 
 void sessoes();
 void cadastrar_Sessao();
-void procurar_Sessao();
+void pesquisar_Sessao();
 void atualizar_Sessao();
 void excluir_Sessao();
 
@@ -178,8 +178,7 @@ int main() {
             case 0:
                 parada = false;
                 break;
-                
-
+            
             default:
                 printf("\n \n");
                 printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
@@ -208,7 +207,7 @@ void ingresso() {
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("###                             2 - EXCLUIR INGRESSO                              ###\n");
+        printf("###                             2 - PESQUISAR INGRESSO                              ###\n");
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
@@ -216,7 +215,7 @@ void ingresso() {
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("###                             4 - PESQUISAR INGRESSO                            ###\n");
+        printf("###                             4 - EXCLUIR INGRESSO                            ###\n");
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
@@ -230,13 +229,13 @@ void ingresso() {
                 vender_Ingresso();
                 break;
             case 2:
-                excluir_Ingresso();
+                pesquisar_Ingresso();
                 break;
             case 3:
                 atualizar_Ingresso();
                 break;
             case 4:
-                pesquisar_Ingresso();
+                excluir_Ingresso();
                 break;
             case 0:
                 parada_I = false;
@@ -265,7 +264,7 @@ void shows(){
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("###                             2 - EXCLUIR SHOW                                  ###\n");
+        printf("###                             2 - PESQUISAR SHOW                                  ###\n");
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
@@ -273,7 +272,7 @@ void shows(){
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("###                             4 - PESQUISAR SHOW                                ###\n");
+        printf("###                             4 - EXCLUIR SHOW                                ###\n");
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
@@ -287,13 +286,13 @@ void shows(){
                 cadastrar_Show();
                 break;
             case 2:
-                excluir_Show();
+                pesquisar_Show();
                 break;
             case 3:
                 atualizar_Show();
                 break;
             case 4:
-                pesquisar_Show();
+                excluir_Show();
                 break;
             case 0:
                 parada_S = false;
@@ -307,6 +306,58 @@ void shows(){
     } while (parada_S);
 }
 
+void sessoes(){
+    bool parada_P = true;
+    do {
+        int executar_P;
+        system("clear || cls");
+        printf("#####################################################################################\n");
+        func_Ani(tempo);
+        printf("   +++                                 SESSÃO                                    +++\n");
+        func_Ani(tempo);
+        printf("#####################################################################################\n");
+        func_Ani(tempo);
+        printf("###                             1 - CADASTRAR SESSÃO                                 ###\n");
+        func_Ani(tempo);
+        printf("###                                                                              ###\n");
+        printf("###                             2 - PESQUISAR SESSÃO                              ###\n");
+        printf("###                                                                                ###\n");
+        func_Ani(tempo);
+        printf("###                             3 - ATUALIZAR SESSÃO                             ###\n");
+        printf("###                                                                                ###\n");
+        func_Ani(tempo);
+        printf("###                             4 - EXCLUIR SESSÃO                               ###\n");
+        printf("###                                                                                ###\n");
+        func_Ani(tempo);
+        printf("###                             0 - VOLTAR AO MENU ANTERIOR...                   ###\n");
+        scanf(" %d", &executar_P);
+        getchar();
+
+        switch (executar_P) {
+            case 1:
+                cadastrar_Sessao();
+                break;
+            case 2:
+                pesquisar_Sessao();
+                break;
+            case 3:
+                atualizar_Sessao();
+                break;
+            case 4:
+                excluir_Sessao();
+                break;
+            case 0:
+                parada_P = false;
+                break;
+            default:
+                printf("\n \n");
+                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
+                system("pause");
+                break;
+        }
+    } while (parada_P);
+}
+    
 void tecnicos(){
     bool parada_T = true;
     do {
@@ -321,7 +372,7 @@ void tecnicos(){
         printf("###                             1 - CADASTRAR TECNICO                              ###\n");
         func_Ani(tempo);
         printf("###                                                                                ###\n");
-        printf("###                             2 - PROCURAR TÉCNICO                               ###\n");
+        printf("###                             2 - PESQUISAR TÉCNICO                               ###\n");
         printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             3 - ATUALIZAR TÉCNICO                              ###\n");
@@ -359,57 +410,6 @@ void tecnicos(){
     } while (parada_T);
 }
 
-void sessoes(){
-    bool parada_P = true;
-    do {
-        int executar_P;
-        system("clear || cls");
-        printf("#####################################################################################\n");
-        func_Ani(tempo);
-        printf("   +++                                 SESSÃO                                    +++\n");
-        func_Ani(tempo);
-        printf("#####################################################################################\n");
-        func_Ani(tempo);
-        printf("###                             1 - CADASTRAR SESSÃO                                 ###\n");
-        func_Ani(tempo);
-        printf("###                                                                              ###\n");
-        printf("###                             2 - PROCURAR SESSÃO                              ###\n");
-        printf("###                                                                                ###\n");
-        func_Ani(tempo);
-        printf("###                             3 - ATUALIZAR SESSÃO                             ###\n");
-        printf("###                                                                                ###\n");
-        func_Ani(tempo);
-        printf("###                             4 - EXCLUIR SESSÃO                               ###\n");
-        printf("###                                                                                ###\n");
-        func_Ani(tempo);
-        printf("###                             0 - VOLTAR AO MENU ANTERIOR...                   ###\n");
-        scanf(" %d", &executar_P);
-        getchar();
-
-        switch (executar_P) {
-            case 1:
-                cadastrar_Sessao();
-                break;
-            case 2:
-                procurar_Sessao();
-                break;
-            case 3:
-                atualizar_Sessao();
-                break;
-            case 4:
-                excluir_Sessao();
-                break;
-            case 0:
-                parada_P = false;
-                break;
-            default:
-                printf("\n \n");
-                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-                system("pause");
-                break;
-        }
-    } while (parada_P);
-}
 
 
 //############### FUNÇÕES MÓDULO INGRESSO ##################################################
@@ -657,7 +657,7 @@ void cadastrar_Sessao(){
     system("pause");
 }
 
-void procurar_Sessao(){
+void pesquisar_Sessao(){
     int codigo_show;
 
     char titulo[19]= "PROCURAR SESSÃO";
