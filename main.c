@@ -178,7 +178,7 @@ int main() {
             case 0:
                 parada = false;
                 break;
-                ani_Encerrar();
+                
 
             default:
                 printf("\n \n");
@@ -187,6 +187,7 @@ int main() {
                 break;
         }
     } while (parada);
+    ani_Encerrar();
 
     return 0;            
 } 
