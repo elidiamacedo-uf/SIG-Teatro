@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include "anima.h"
+#include "ingresso.h"
 
-#ifdef _WIN64 // Caso windows 64, use:
-    #include <windows.h>  //Trecho de código tirado do ChatGPT
-#else // Se não, Linux,Mcos, use:
-    #include <unistd.h>
-#endif
+// #ifdef _WIN64 // Caso windows 64, use:
+//     #include <windows.h>  //Trecho de código tirado do ChatGPT
+// #else // Se não, Linux,Mcos, use:
+//     #include <unistd.h>
+// #endif
 
 
 //INFO
@@ -19,10 +21,10 @@ void mostrar_data_hora();
 
 
 //ANIMAÇÕES
-void ani_Encerrar();
-void func_Ani(int);
-void func_Ani_Left();
-void func_Ani_Thread();
+// void ani_Encerrar();
+// void func_Ani(int);
+// void func_Ani_Left();
+// void func_Ani_Thread();
 
 
 //MÓDULOS
@@ -85,7 +87,7 @@ void equipe(){
     printf("|_|  |_|\n");
 
     printf("\n \n");
-    
+    printf("#########################################################################\n");
     printf("             Universidade Federal do Rio Grande do Norte                 \n");
     printf("                 Disciplina DCT1106 -- Programacao                       \n");
     printf("                   Professor: Flavius Gorgonio                           \n");
@@ -191,63 +193,8 @@ int main() {
     return 0;            
 } 
 
+//################ MÓDULOS PRINCIPAIS ######################################################
 
-void ingresso() {  
-    bool parada_I = true;
-    do {  
-        int executar_I;
-        system("clear||cls");
-        printf("#####################################################################################\n");
-        func_Ani(tempo);
-        printf("   +++                                INGRESSO                                 +++\n");
-        func_Ani(tempo);
-        printf("#####################################################################################\n");
-        func_Ani(tempo);
-        printf("###                             1 - VENDER INGRESSO                               ###\n");
-        func_Ani(tempo);
-        printf("###                                                                               ###\n");
-        func_Ani(tempo);
-        printf("###                             2 - PESQUISAR INGRESSO                              ###\n");
-        func_Ani(tempo);
-        printf("###                                                                               ###\n");
-        func_Ani(tempo);
-        printf("###                             3 - ATUALIZAR INGRESSO                            ###\n");
-        func_Ani(tempo);
-        printf("###                                                                               ###\n");
-        func_Ani(tempo);
-        printf("###                             4 - EXCLUIR INGRESSO                            ###\n");
-        func_Ani(tempo);
-        printf("###                                                                               ###\n");
-        func_Ani(tempo);
-        printf("##                              0 - VOLTAR AO MENU ANTERIOR...  ");
-        
-        scanf(" %d",&executar_I);
-        getchar();
-        
-        switch (executar_I) {
-            case 1:
-                vender_Ingresso();
-                break;
-            case 2:
-                pesquisar_Ingresso();
-                break;
-            case 3:
-                atualizar_Ingresso();
-                break;
-            case 4:
-                excluir_Ingresso();
-                break;
-            case 0:
-                parada_I = false;
-                break;
-            default:
-                printf("\n \n");
-                printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
-                system("pause");
-                break;
-        }
-    } while (parada_I);
-}
 
 void shows(){  
     bool parada_S = true;
@@ -264,7 +211,7 @@ void shows(){
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("###                             2 - PESQUISAR SHOW                                  ###\n");
+        printf("###                             2 - PESQUISAR SHOW                                ###\n");
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
@@ -272,7 +219,7 @@ void shows(){
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
-        printf("###                             4 - EXCLUIR SHOW                                ###\n");
+        printf("###                             4 - EXCLUIR SHOW                                  ###\n");
         func_Ani(tempo);
         printf("###                                                                               ###\n");
         func_Ani(tempo);
@@ -372,7 +319,7 @@ void tecnicos(){
         printf("###                             1 - CADASTRAR TECNICO                              ###\n");
         func_Ani(tempo);
         printf("###                                                                                ###\n");
-        printf("###                             2 - PESQUISAR TÉCNICO                               ###\n");
+        printf("###                             2 - PESQUISAR TECNICO                              ###\n");
         printf("###                                                                                ###\n");
         func_Ani(tempo);
         printf("###                             3 - ATUALIZAR TÉCNICO                              ###\n");
@@ -409,72 +356,6 @@ void tecnicos(){
             }
     } while (parada_T);
 }
-
-
-
-//############### FUNÇÕES MÓDULO INGRESSO ##################################################
-void vender_Ingresso(){
-    char nome[30];
-    int codigo_Show;
-    char cadeira[2];
-    char titulo[16] = "VENDER INGRESSO";
-    
-    func_Ani_Left(titulo);
-    
-    printf("\n \n");
-    printf("-----------------------------------\n");
-    printf("|  INSIRA O NOME: ");
-    fgets(nome,30,stdin);
-    printf("V----------------------------------\n");
-    printf("|  INSIRA O CÓDIGO DO SHOW: ");
-    scanf("%d",&codigo_Show);
-    getchar();
-    printf("V----------------------------------\n");
-    printf("|  ESCOLHA SUA CADEIRA: ");
-    fgets(cadeira,2,stdin);
-    printf("V----------------------------------\n");
-    system("pause");
-}
-
-void excluir_Ingresso(){
-    int codigo;
-    char titulo[19] = "EXCLUIR INGRESSO";
-    func_Ani_Left(titulo);
-    
-    printf("\n \n");
-    printf("-----------------------------------\n");
-    printf("|  INSIRA O CODIGO DO INGRESSO: ");
-    scanf("%d",&codigo);
-    printf("-----------------------------------\n");
-    system("pause");
-}
-
-void atualizar_Ingresso(){
-    int codigo;
-    char titulo[19] = "ATUALIZAR INGRESSO";
-    func_Ani_Left(titulo);
-
-    printf("\n \n");
-    printf("-----------------------------------\n");
-    printf("|  INSIRA O CODIGO DO INGRESSO: ");
-    scanf("%d",&codigo);
-    printf("-----------------------------------\n");
-    system("pause");
-}
-
-void pesquisar_Ingresso(){
-    int codigo;
-    char titulo[19] = "PESQUISAR INGRESSO";
-    func_Ani_Left(titulo);
-
-    printf("\n \n");
-    printf("-----------------------------------\n");
-    printf("|  INSIRA O CODIGO DO INGRESSO: ");
-    scanf("%d",&codigo);
-    printf("-----------------------------------\n");
-    system("pause");
-}
-
 
 //############### FUNÇÕES MÓDULO SHOWS #####################################################
 void cadastrar_Show(){
@@ -615,7 +496,6 @@ void excluir_Tecnico(){
 //######################### FUNÇÕES MÓDULO SESSÃO ###################################################
 void cadastrar_Sessao(){
     int codigo_show;
-    int tempo = 100;
 
     char nome_show[50];
     char data[32]; //até o momento, nao há nenhuma comparação de data e hora
@@ -715,80 +595,4 @@ void mostrar_data_hora(char * data, char * hora){
 }
 
 
-
-                                                                                                                                                                                                                                                                                                                                                                                                    
-
-
-//################# FUNÇÕES DE ANIMAÇÃO ##################################################
-void ani_Encerrar(){
-    printf("\n \n");
-    
-    int i;
-    int j;
-    for (i = 0; i < 4; i++){
-        system("clear||cls");
-        printf("ENCERRAR PROGRAMA ");
-        for (j = 0; j < 5; j++){
-            func_Ani(300);
-            printf(". ");
-            fflush(stdout); 
-        }
-    }
-    system("clear||cls");
-    printf("PROGRAMA ENCERRADO\n");
-}
-
-void func_Ani(int tempo){  //Função retirada do ChatGPT
-    #ifdef _WIN64
-        Sleep(tempo);
-    #else
-        usleep(tempo * 1000); 
-        //struct timespec ts;
-        //ts.tv_sec = tempo / 1000;                 
-        //ts.tv_nsec = (tempo % 1000) * 1000000L;   
-        //nanosleep(&ts, NULL);
-    #endif
-}
-
-void func_Ani_Left(char titulo[30]){
-    system("clear||cls");
-    int i;
-     //Primeira Linha
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
-    printf("\n");
-
-    //Segunda Linha
-    for(i = 0;i<27; i++){
-        if (i > 3 && i < 7){ 
-            printf("+");
-            func_Ani(15);
-        } 
-        else{
-            printf(" ");
-            func_Ani(15);
-        }
-    }
-    printf("%s",titulo);
-    
-    for(i = 0;i<31;i++){
-        if (i > 19 && i < 24){
-            printf("+");
-            func_Ani(15);
-        }
-        else{
-            printf(" ");
-            func_Ani(1);
-        }
-    }
-    printf("\n");
-
-    // Terceira Linha   
-    for(i = 0; i<70; i++){  
-        printf("#");
-        func_Ani(1);
-    }
- 
-}
+                                                                                                                                                                                                                                                                                                                                                                                        
