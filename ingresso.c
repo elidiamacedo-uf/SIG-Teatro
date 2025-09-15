@@ -3,7 +3,13 @@
 #include <stdbool.h>
 #include "anima.h"
 
-int tempo = 100;
+void ingresso();
+void vender_Ingresso();
+void excluir_Ingresso();                
+void atualizar_Ingresso();
+void pesquisar_Ingresso();
+
+int tempo_Ingresso = 100;
 void ingresso() {  
 
     bool parada_I = true;
@@ -11,27 +17,27 @@ void ingresso() {
         int executar_I;
         system("clear||cls");
         printf("#####################################################################################\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
         printf("   +++                                INGRESSO                                 +++\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
         printf("#####################################################################################\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
         printf("###                             1 - VENDER INGRESSO                               ###\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
         printf("###                                                                               ###\n");
-        func_Ani(tempo);
-        printf("###                             2 - PESQUISAR INGRESSO                              ###\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
+        printf("###                             2 - PESQUISAR INGRESSO                            ###\n");
+        func_Ani(tempo_Ingresso);
         printf("###                                                                               ###\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
         printf("###                             3 - ATUALIZAR INGRESSO                            ###\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
         printf("###                                                                               ###\n");
-        func_Ani(tempo);
-        printf("###                             4 - EXCLUIR INGRESSO                            ###\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
+        printf("###                             4 - EXCLUIR INGRESSO                              ###\n");
+        func_Ani(tempo_Ingresso);
         printf("###                                                                               ###\n");
-        func_Ani(tempo);
+        func_Ani(tempo_Ingresso);
         printf("##                              0 - VOLTAR AO MENU ANTERIOR...  ");
         
         scanf(" %d",&executar_I);
@@ -57,7 +63,7 @@ void ingresso() {
                 printf("\n \n");
                 printf("!VALOR INVALIDO, POR FAVOR INSERIR APENAS UM DOS VALORES ACIMA!\n");
                 system("pause");
-                break;
+            
         }
     } while (parada_I);
 }

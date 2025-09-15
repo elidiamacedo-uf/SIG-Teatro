@@ -6,6 +6,9 @@
     #include <unistd.h>
 #endif
 
+void ani_Encerrar();
+void func_Ani(int);
+void func_Ani_Left();
 
 void ani_Encerrar(){
     printf("\n \n");
