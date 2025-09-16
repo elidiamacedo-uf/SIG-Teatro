@@ -1,13 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "sessoes.h"
 #include "anima.h"
-
-void sessoes();
-void cadastrar_Sessao();
-void pesquisar_Sessao();
-void atualizar_Sessao();
-void excluir_Sessao();
 
 int tempo_Sessoes = 100;
 void sessoes(){
@@ -83,7 +78,7 @@ void cadastrar_Sessao(){
 
     printf("-----------------------------------\n");
     printf("|  INSIRA O NOME DO SHOW: ");
-    fgets(nome_show, sizeof(nome_show), stdin);
+    fgets(nome_show, 50, stdin);
 
     printf("-----------------------------------\n");
     printf("|  INSIRA O PREÇO DO SHOW: ");

@@ -16,53 +16,92 @@ void equipe();
 //void mostrar_data_hora();
 
 void equipe(){
-     printf(" _    _ \n");
+    int tempo_Eq = 50; 
+    printf(" _    _ \n");
+    func_Ani(tempo_Eq);
     printf("| |  | |\n");
+    func_Ani(tempo_Eq);
     printf("| |  | |\n");
+    func_Ani(tempo_Eq);
     printf("| |  | |\n");
+    func_Ani(tempo_Eq);
     printf("| |  | |\n");
+    func_Ani(tempo_Eq);
     printf("| |__| |\n");
+    func_Ani(tempo_Eq);
     printf(" \\____/ \n\n");
+    func_Ani(tempo_Eq);
 
     // Desenha a letra F
     printf(" ______ \n");
+    func_Ani(tempo_Eq);
     printf("|  ____|\n");
+    func_Ani(tempo_Eq);
     printf("| |__   \n");
+    func_Ani(tempo_Eq);
     printf("|  __|  \n");
+    func_Ani(tempo_Eq);
     printf("| |     \n");
+    func_Ani(tempo_Eq);
     printf("|_|     \n\n");
+    func_Ani(tempo_Eq);
                                          // A palavra UFRN foi feita pelo GEMINI
     // Desenha a letra R
     printf(" ______ \n");
+    func_Ani(tempo_Eq);
     printf("|  _  \\\n");
+    func_Ani(tempo_Eq);
     printf("| | | |\n");
+    func_Ani(tempo_Eq);
     printf("| | | |\n");
+    func_Ani(tempo_Eq);
     printf("| |_| |\n");
+    func_Ani(tempo_Eq);
     printf("|  _  /\n");
+    func_Ani(tempo_Eq);
     printf("|_| \\_\\\n\n");
+    func_Ani(tempo_Eq);
 
     // Desenha a letra N
     printf(" _    _ \n");
+    func_Ani(tempo_Eq);
     printf("| \\  / |\n");
+    func_Ani(tempo_Eq);
     printf("|  \\/  |\n");
+    func_Ani(tempo_Eq);
     printf("| |\\/| |\n");
+    func_Ani(tempo_Eq);
     printf("| |  | |\n");
+    func_Ani(tempo_Eq);
     printf("|_|  |_|\n");
+    func_Ani(tempo_Eq);
 
     printf("\n \n");
     printf("#########################################################################\n");
+    func_Ani(tempo_Eq);
     printf("             Universidade Federal do Rio Grande do Norte                 \n");
+    func_Ani(tempo_Eq);
     printf("                 Disciplina DCT1106 -- Programacao                       \n");
+    func_Ani(tempo_Eq);
     printf("                   Professor: Flavius Gorgonio                           \n");
+    func_Ani(tempo_Eq);
     printf("#########################################################################\n");
+    func_Ani(tempo_Eq);
     printf("-+-+-+-+-+-+-+-+-+- Sistema de Gestao de Teatro +-+-+-+-+-+-+-+-+-+-+-+-+\n");
+    func_Ani(tempo_Eq);
     printf("#########################################################################\n");
+    func_Ani(tempo_Eq);
     printf("\n");
     printf("             Projeto desenvolvido por:                                   \n");
+    func_Ani(tempo_Eq);
     printf("             Aluno 1: Emilly Elidia Andrade Macedo dos Santos            \n");
+    func_Ani(tempo_Eq);
     printf("             Aluno 2: Marcos Vinícius Dantas da Silva                    \n");
+    func_Ani(tempo_Eq);
     printf("\n");
+    func_Ani(tempo_Eq);
     printf("#########################################################################\n");
+    func_Ani(tempo_Eq);
     printf("\n \n \n");
 }
 void proj_Descrit(){
@@ -88,7 +127,7 @@ void proj_Descrit(){
 int tempo_Main = 100;
 int main() {
     
-    bool parada = true;//
+    bool parada = true;
     do { 
         system("clear||cls");
         int executar;
@@ -102,27 +141,27 @@ int main() {
         func_Ani(tempo_Main);
         printf("#####################################################################################\n");
         func_Ani(tempo_Main);
-        printf("###                             1 - INGRESSO                                      ###\n");
+        printf("###                             1 - ENTRAR NO MODULO INGRESSO                     ###\n");
         func_Ani(tempo_Main);
         printf("###                                                                               ###\n");
         func_Ani(tempo_Main);
-        printf("###                             2 - SHOWS/PECAS                                   ###\n");
+        printf("###                             2 - ENTRAR NO MODULO SHOWS/PECAS                  ###\n");
         func_Ani(tempo_Main);
         printf("###                                                                               ###\n");
         func_Ani(tempo_Main);
-        printf("###                             3 - SESSOES                                       ###\n");
+        printf("###                             3 - ENTRAR NO MODULO SESSOES                      ###\n");
         func_Ani(tempo_Main);
         printf("###                                                                               ###\n");
         func_Ani(tempo_Main);
-        printf("###                             4 - TECNICOS                                      ###\n");
+        printf("###                             4 - ENTRAR NO MODULO TECNICOS                     ###\n");
         func_Ani(tempo_Main);
         printf("###                                                                               ###\n");
         func_Ani(tempo_Main);
-        printf("###                             5 - RELATORIO                                     ###\n");
+        printf("###                             5 - ENTRAR NO MODULO RELATORIO                    ###\n");
         func_Ani(tempo_Main);
         printf("###                                                                               ###\n");
         func_Ani(tempo_Main);
-        printf("##                              0 - SAIR : ");
+        printf("##                              0 - ENCERRAR PROGRAMA : ");
         
         scanf("%d",&executar);
         getchar();

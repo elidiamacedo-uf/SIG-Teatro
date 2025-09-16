@@ -2,12 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "anima.h"
-
-void ingresso();
-void vender_Ingresso();
-void excluir_Ingresso();                
-void atualizar_Ingresso();
-void pesquisar_Ingresso();
+#include "ingresso.h"
 
 int tempo_Ingresso = 100;
 void ingresso() {  
@@ -71,7 +66,7 @@ void ingresso() {
 void vender_Ingresso(){
     char nome[30];
     int codigo_Show;
-    char cadeira[2];
+    char cadeira[3];
     char titulo[16] = "VENDER INGRESSO";
     
     func_Ani_Left(titulo);
@@ -82,11 +77,11 @@ void vender_Ingresso(){
     fgets(nome,30,stdin);
     printf("V----------------------------------\n");
     printf("|  INSIRA O CÓDIGO DO SHOW: ");
-    scanf("%d",&codigo_Show);
+    scanf(" %d",&codigo_Show);
     getchar();
     printf("V----------------------------------\n");
     printf("|  ESCOLHA SUA CADEIRA: ");
-    fgets(cadeira,2,stdin);
+    fgets(cadeira,3,stdin);
     printf("V----------------------------------\n");
     system("pause");
 }
@@ -125,7 +120,8 @@ void pesquisar_Ingresso(){
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO INGRESSO: ");
-    scanf("%d",&codigo);
+    scanf(" %d",&codigo);
+    getchar();
     printf("-----------------------------------\n");
     system("pause");
 }

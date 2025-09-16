@@ -1,13 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "tecnicos.h"
 #include "anima.h"
-
-void tecnicos();
-void cadastro_Tecnico();
-void atualizar_Tecnico();
-void pesquisar_Tecnico();
-void excluir_Tecnico();
 
 int tempo_Tecnicos = 100;
 void tecnicos(){
@@ -74,23 +69,23 @@ void cadastro_Tecnico(){
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O CPF DO TECNICO: ");  //** Deixarei assim por enquanto, sem validação
-    fgets(cpf, sizeof(cpf), stdin);
+    fgets(cpf, 15, stdin);
 
     printf("-----------------------------------\n");
     printf("|  INSIRA O NOME DO TECNICO: ");
-    fgets(nome, sizeof(nome), stdin);
+    fgets(nome, 30, stdin);
 
     printf("-----------------------------------\n");
     printf("|  INSIRA A FUNÇÃO DO TECNICO: ");
-    fgets(funcao, sizeof(funcao), stdin);
+    fgets(funcao, 15, stdin);
 
     printf("-----------------------------------\n");
     printf("|  INSIRA O EMAIL DO TECNICO: ");
-    fgets(email,sizeof(email),stdin);
+    fgets(email, 40, stdin);
     printf("-----------------------------------\n");//
     
     printf("|  INSIRA O TELEFONE: ");
-    fgets(telefone,sizeof(telefone),stdin);
+    fgets(telefone, 16, stdin);
     printf("-----------------------------------\n");
 
 }
@@ -102,7 +97,7 @@ void atualizar_Tecnico(){
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
-    fgets(cpf, sizeof(cpf), stdin);
+    fgets(cpf, 15, stdin);
 
     // procurar se há esse cpf
     // se sim, para alterar os dados tem que saber quais dados quer alterar
@@ -116,7 +111,7 @@ void pesquisar_Tecnico(){
     printf("\n \n");
     printf("-----------------------------------\n");
     printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
-    fgets(cpf, sizeof(cpf), stdin);
+    fgets(cpf, 15, stdin);
 
 }
 
@@ -128,6 +123,6 @@ void excluir_Tecnico(){
 
     printf("-----------------------------------\n");
     printf("|  INSIRA O CPF DO TÉCNICO: ");  //** Deixarei assim por enquanto, sem validação
-    fgets(cpf, sizeof(cpf), stdin);
+    fgets(cpf, 19, stdin);
 
 }

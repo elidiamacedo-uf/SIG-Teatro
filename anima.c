@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "anima.h"
 #ifdef _WIN64 // Caso windows 64, use:
     #include <windows.h>  //Trecho de código tirado do ChatGPT
 #else // Se não, Linux,Mcos, use:
     #include <unistd.h>
 #endif
-
-void ani_Encerrar();
-void func_Ani(int);
-void func_Ani_Left();
 
 void ani_Encerrar(){
     printf("\n \n");

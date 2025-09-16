@@ -1,13 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "shows.h"
 #include "anima.h"
-
-void shows();
-void cadastrar_Show();
-void excluir_Show();
-void atualizar_Show();
-void pesquisar_Show();
 
 int tempo_Shows = 100;
 void shows(){  
@@ -37,7 +32,7 @@ void shows(){
         func_Ani(tempo_Shows);
         printf("###                                                                               ###\n");
         func_Ani(tempo_Shows);
-        printf("##                              0 - SAIR : ");
+        printf("##                              0 - VOLTAR AO MENU ANTERIOR... ");
         
         scanf(" %d",&executar_S);
         getchar();
@@ -126,5 +121,6 @@ void pesquisar_Show(){
     printf("-----------------------------------\n");
     printf("|  INSIRA O CODIGO DO SHOW: ");
     scanf("%d",&codigo);
+    getchar();
     printf("-----------------------------------\n");
 }
